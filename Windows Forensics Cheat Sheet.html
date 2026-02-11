@@ -823,6 +823,344 @@
                 color: #333
             }
         }
+
+        /* ========== SIGNATURE FOOTER STYLES ========== */
+        /* ========== SIGNATURE FOOTER STYLES ========== */
+        .signature-footer {
+            background: var(--bg2);
+            border-top: 1px solid var(--bdr);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .signature-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--cy), var(--mg), var(--cy), transparent);
+            opacity: 0.5;
+        }
+
+        .copyright-text {
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            color: var(--t3);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .signature-wrapper {
+            position: relative;
+            cursor: pointer;
+            padding: 20px 40px;
+            display: inline-block;
+            border-radius: 8px;
+            background: var(--card);
+            border: 1px solid var(--bdr);
+            transition: var(--tr);
+        }
+
+        .signature-wrapper:hover {
+            background: var(--card-h);
+            border-color: var(--bdr-h);
+            box-shadow:
+                0 0 20px rgba(0, 255, 255, 0.1),
+                0 0 40px rgba(255, 0, 255, 0.05);
+        }
+
+        /* ========== IDLE STATE ANIMATION ========== */
+        .signature-svg {
+            filter: drop-shadow(0 0 6px var(--cy));
+            animation: idle-glow 3s ease-in-out infinite alternate;
+            transition: filter 0.3s ease;
+        }
+
+        .signature-wrapper:hover .signature-svg {
+            filter: drop-shadow(0 0 12px var(--cy)) drop-shadow(0 0 25px var(--mg));
+        }
+
+        @keyframes idle-glow {
+            0% {
+                filter: drop-shadow(0 0 4px var(--cy)) drop-shadow(0 0 8px var(--cy2));
+                transform: translateY(0);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 8px var(--mg)) drop-shadow(0 0 16px var(--mg2));
+                transform: translateY(-2px);
+            }
+        }
+
+        /* ========== SIGNATURE PATH STYLES ========== */
+        .signature-path {
+            fill: none;
+            stroke: url(#sig-gradient);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .signature-path.idle {
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 0;
+            animation: idle-flow 12s linear infinite;
+        }
+
+        @keyframes idle-flow {
+            0% {
+                stroke-dashoffset: 0;
+            }
+
+            100% {
+                stroke-dashoffset: -100;
+            }
+        }
+
+        /* ========== HANDWRITING ANIMATION ========== */
+        .signature-path.drawing {
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            animation: draw-sig 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes draw-sig {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* ========== UNDERLINE FLOURISH ========== */
+        .flourish-path {
+            fill: none;
+            stroke: var(--mg);
+            stroke-width: 2;
+            stroke-linecap: round;
+            opacity: 0.8;
+        }
+
+        .flourish-path.idle {
+            stroke-dasharray: 500;
+            stroke-dashoffset: 0;
+        }
+
+        .flourish-path.drawing {
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: draw-flourish 1s ease forwards 3.8s;
+        }
+
+        @keyframes draw-flourish {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* ========== PEN CURSOR ========== */
+        .pen-cursor {
+            position: absolute;
+            font-size: 18px;
+            opacity: 0;
+            pointer-events: none;
+            filter: drop-shadow(0 0 5px var(--cy));
+            z-index: 10;
+        }
+
+        .pen-cursor.active {
+            opacity: 1;
+            animation: pen-trace 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes pen-trace {
+            0% {
+                left: 2%;
+                top: 45%;
+                opacity: 1;
+            }
+
+            10% {
+                left: 12%;
+                top: 40%;
+            }
+
+            20% {
+                left: 22%;
+                top: 35%;
+            }
+
+            30% {
+                left: 35%;
+                top: 45%;
+            }
+
+            40% {
+                left: 48%;
+                top: 38%;
+            }
+
+            50% {
+                left: 58%;
+                top: 42%;
+            }
+
+            60% {
+                left: 68%;
+                top: 40%;
+            }
+
+            70% {
+                left: 78%;
+                top: 45%;
+            }
+
+            80% {
+                left: 88%;
+                top: 42%;
+            }
+
+            90% {
+                left: 95%;
+                top: 40%;
+            }
+
+            100% {
+                left: 98%;
+                top: 45%;
+                opacity: 0;
+            }
+        }
+
+        /* ========== INK PARTICLES ========== */
+        .ink-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .ink-particle.active {
+            animation: ink-splash 0.8s ease-out forwards;
+        }
+
+        @keyframes ink-splash {
+            0% {
+                opacity: 1;
+                transform: scale(0) translate(0, 0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1) translate(var(--tx), var(--ty));
+            }
+        }
+
+        /* ========== SPARKLES ========== */
+        .sig-sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, var(--cy) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .signature-wrapper:hover .sig-sparkle {
+            animation: sparkle-pop 2s ease-in-out infinite;
+        }
+
+        .sig-sparkle:nth-child(1) {
+            left: 5%;
+            top: 30%;
+            animation-delay: 0s;
+        }
+
+        .sig-sparkle:nth-child(2) {
+            left: 25%;
+            top: 65%;
+            animation-delay: 0.3s;
+        }
+
+        .sig-sparkle:nth-child(3) {
+            left: 50%;
+            top: 25%;
+            animation-delay: 0.6s;
+        }
+
+        .sig-sparkle:nth-child(4) {
+            left: 75%;
+            top: 60%;
+            animation-delay: 0.9s;
+        }
+
+        .sig-sparkle:nth-child(5) {
+            left: 95%;
+            top: 35%;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes sparkle-pop {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* ========== CLICK HINT ========== */
+        .click-hint {
+            font-family: 'Fira Code', monospace;
+            font-size: 10px;
+            color: var(--t3);
+            margin-top: 15px;
+            letter-spacing: 1px;
+            animation: hint-blink 2.5s ease-in-out infinite;
+        }
+
+        @keyframes hint-blink {
+
+            0%,
+            100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .click-hint.hidden {
+            opacity: 0 !important;
+            transition: opacity 0.3s;
+        }
+
+        .click-hint span {
+            color: var(--cy);
+        }
+
+        /* ========== HEX BADGE ========== */
+        .hex-badge {
+            font-family: 'Fira Code', monospace;
+            font-size: 10px;
+            color: var(--lm);
+            background: rgba(0, 255, 136, 0.1);
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-left: 10px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
     </style>
 </head>
 
@@ -849,18 +1187,18 @@
     </div>
     <div class="nav-tabs-container">
         <div class="nav-tabs" id="nav-tabs">
-            <button class="nav-tab" data-section="quick-reference"
-                onclick="scrollToSection('quick-reference')">&#127919; Quick Reference</button>
-            <button class="nav-tab" data-section="essential-tools"
-                onclick="scrollToSection('essential-tools')">&#128736;&#65039; Essential Tools</button>
+            <button class="nav-tab" data-section="quick-reference-tables"
+                onclick="scrollToSection('quick-reference-tables')">&#127919; Quick Reference</button>
+            <button class="nav-tab" data-section="essential-tools-commands"
+                onclick="scrollToSection('essential-tools-commands')">&#128736;&#65039; Essential Tools</button>
             <button class="nav-tab" data-section="registry-analysis"
                 onclick="scrollToSection('registry-analysis')">&#128221; Registry Analysis</button>
             <button class="nav-tab" data-section="event-log-analysis"
                 onclick="scrollToSection('event-log-analysis')">&#128202; Event Log Analysis</button>
             <button class="nav-tab" data-section="file-system-artifacts"
                 onclick="scrollToSection('file-system-artifacts')">&#128190; File System Artifacts</button>
-            <button class="nav-tab" data-section="user-activity" onclick="scrollToSection('user-activity')">&#128100;
-                User Activity</button>
+            <button class="nav-tab" data-section="user-activity-analysis"
+                onclick="scrollToSection('user-activity-analysis')">&#128100; User Activity</button>
             <button class="nav-tab" data-section="persistence-mechanisms"
                 onclick="scrollToSection('persistence-mechanisms')">&#128260; Persistence</button>
             <button class="nav-tab" data-section="malware-indicators"
@@ -3577,6 +3915,101 @@ Suspicious Patterns:
             </tbody>
         </table>
     </div>
+    <footer class="signature-footer">
+        <p class="copyright-text">© 2026 // ALL_RIGHTS_RESERVED <span class="hex-badge">v1.0</span></p>
+
+        <div class="signature-wrapper" id="signatureWrapper" onclick="playSignature()">
+
+            <!-- Sparkle effects -->
+            <div class="sig-sparkle"></div>
+            <div class="sig-sparkle"></div>
+            <div class="sig-sparkle"></div>
+            <div class="sig-sparkle"></div>
+            <div class="sig-sparkle"></div>
+
+            <!-- Pen cursor -->
+            <span class="pen-cursor" id="penCursor">🖊️</span>
+
+            <!-- Main SVG Signature -->
+            <svg class="signature-svg" id="signatureSvg" width="340" height="90" viewBox="0 0 340 90">
+                <defs>
+                    <linearGradient id="sig-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="var(--cy)" />
+                        <stop offset="35%" stop-color="var(--lm)" />
+                        <stop offset="65%" stop-color="var(--mg)" />
+                        <stop offset="100%" stop-color="var(--cy)" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Handwritten: 0xF4d3Z0n3 -->
+                <path id="signaturePath" class="signature-path idle" d="
+              M 18,42
+              C 18,28 38,24 42,38
+              C 46,52 38,62 28,62
+              C 18,62 14,52 18,42
+              
+              M 54,32
+              L 72,58
+              M 72,32
+              L 54,58
+              
+              M 84,28
+              L 84,62
+              M 84,28
+              L 108,28
+              M 84,44
+              L 102,44
+              
+              M 138,28
+              L 114,52
+              L 142,52
+              M 134,28
+              L 134,62
+              
+              M 172,24
+              L 172,62
+              C 172,62 172,48 160,48
+              C 148,48 148,62 160,62
+              C 172,62 172,52 172,52
+              
+              M 186,34
+              C 200,30 206,36 198,44
+              C 206,48 204,62 186,58
+              
+              M 218,30
+              L 244,30
+              L 218,60
+              L 244,60
+              
+              M 258,46
+              C 258,32 278,28 282,42
+              C 286,56 274,66 262,64
+              C 250,62 254,50 258,46
+              
+              M 296,46
+              L 296,62
+              M 296,46
+              C 296,36 314,36 314,46
+              L 314,62
+              
+              M 328,34
+              C 342,30 348,36 340,44
+              C 348,48 346,62 328,58
+            " />
+
+                <!-- Underline flourish -->
+                <path id="flourishPath" class="flourish-path idle" d="M 20,75 
+               Q 100,82 180,72 
+               Q 260,62 320,75
+               C 330,77 328,72 322,70" />
+            </svg>
+        </div>
+
+        <p class="click-hint" id="clickHint">[ <span>click</span> to sign // <span>space</span> ]</p>
+
+        <!-- Particles container -->
+        <div id="inkParticles" style="position:absolute;inset:0;pointer-events:none;"></div>
+    </footer>
     <script>
         const state = {
             favorites: JSON.parse(localStorage.getItem('forensicsFavorites') || '[]'),
@@ -3617,25 +4050,25 @@ Suspicious Patterns:
                     curSec = document.createElement('div');
                     curSec.className = 'content-section fade-in';
                     curSec.id = id;
-                    curSec.setAttribute('data-section-name', text);
 
                     const header = document.createElement('div');
                     header.className = 'section-header';
-                    header.innerHTML =
-                        '<span class="fav-btn" title="Toggle Favorite">&#11088;</span>' +
-                        '<h1>' + text + '</h1>' +
+                    header.innerHTML = `<span>${text}</span>` +
+                        '<button class="fav-btn" title="Toggle Favorite">&#9733;</button>' +
                         '<span class="section-toggle">&#9660;</span>';
 
-                    // Fix: capture section in block-scoped variable for correct closure
-                    const thisSec = curSec;
+                    // Fix: capture section ID and element in closure safely
+                    const thisSecId = id;
+                    const thisSecEl = curSec;
+
                     const favBtn = header.querySelector('.fav-btn');
                     favBtn.addEventListener('click', function (e) {
                         e.stopPropagation();
-                        toggleFavorite(id, this);
+                        toggleFavorite(thisSecId, this);
                     });
                     header.addEventListener('click', function (e) {
                         if (e.target.closest('.fav-btn')) return;
-                        toggleSection(thisSec);
+                        toggleSection(thisSecEl);
                     });
 
                     curSec.appendChild(header);
@@ -3690,7 +4123,12 @@ Suspicious Patterns:
         const usedIds = new Set();
 
         function getSectionId(text) {
-            let baseId = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            // Remove emojis and special chars, keep alphanumeric
+            let baseId = text.replace(/[\u{1F300}-\u{1F9FF}]/gu, '') // Remove emojis
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '');
+
             if (!baseId) baseId = 'section';
 
             let id = baseId;
@@ -3725,14 +4163,13 @@ Suspicious Patterns:
         }
 
         function expandSection(section) {
+            if (!section) return;
             const body = section.querySelector('.section-body');
             const toggle = section.querySelector('.section-toggle');
-            if (!body || !toggle) return;
-            if (body.classList.contains('collapsed')) {
+            if (body && body.classList.contains('collapsed')) {
                 body.classList.remove('collapsed');
-                toggle.classList.remove('collapsed');
-                body.style.maxHeight = body.scrollHeight + 'px';
-                setTimeout(() => { if (!body.classList.contains('collapsed')) body.style.maxHeight = 'none'; }, 500);
+                if (toggle) toggle.classList.remove('collapsed');
+                body.style.maxHeight = 'none'; // Instant expand for scrolling
             }
         }
 
@@ -3758,6 +4195,7 @@ Suspicious Patterns:
             const el = document.getElementById(id);
             if (!el) return;
             expandSection(el);
+            // Slight delay to allow layout update if needed, but 'none' max-height should be instant
             el.scrollIntoView({ behavior: 'smooth', block: 'start' });
             updateActiveTab(id);
         }
@@ -4005,6 +4443,7 @@ Suspicious Patterns:
 
         /* ===== SCROLL OBSERVER ===== */
         function initScrollObserver() {
+            // Use threshold 0 to trigger as soon as any pixel is visible
             const obs = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -4013,11 +4452,16 @@ Suspicious Patterns:
                             updateActiveTab(entry.target.id);
                     }
                 });
-            }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
-            // Observe after sections are built
+            }, { threshold: 0, rootMargin: '0px' });
+
+            // Observe immediately
+            document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+            // Safety fallback: ensure all sections are visible after a short delay
+            // This prevents "glitches" where the observer might miss an initial state
             setTimeout(() => {
-                document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-            }, 100);
+                document.querySelectorAll('.content-section').forEach(el => el.classList.add('visible'));
+            }, 500);
         }
 
         /* ===== PROGRESS BAR ===== */
@@ -4071,10 +4515,87 @@ Suspicious Patterns:
             const c = document.getElementById('matrix-canvas');
             if (state.matrixActive) { c.width = window.innerWidth; c.height = window.innerHeight; }
         });
-    </script>
-</body>
+        /* ===== FOOTER SIGNATURE ===== */
+        let sigAnimating = false;
 
-</html>
+        function playSignature() {
+            if (sigAnimating) return;
+            sigAnimating = true;
+
+            const sigPath = document.getElementById('signaturePath');
+            const flourish = document.getElementById('flourishPath');
+            const pen = document.getElementById('penCursor');
+            const hint = document.getElementById('clickHint');
+            const svg = document.getElementById('signatureSvg');
+
+            // Hide hint & stop idle
+            hint.classList.add('hidden');
+            svg.style.animation = 'none';
+
+            // Remove idle, add drawing class
+            [sigPath, flourish].forEach(el => {
+                el.classList.remove('idle');
+                void el.offsetWidth;
+                el.classList.add('drawing');
+            });
+
+            // Activate pen
+            pen.classList.add('active');
+
+            // Spawn ink particles
+            spawnInkParticles();
+
+            // Reset after animation
+            setTimeout(() => {
+                [sigPath, flourish].forEach(el => {
+                    el.classList.remove('drawing');
+                    el.classList.add('idle');
+                });
+                pen.classList.remove('active');
+                hint.classList.remove('hidden');
+                svg.style.animation = '';
+                sigAnimating = false;
+            }, 5000);
+        }
+
+        function spawnInkParticles() {
+            const container = document.getElementById('inkParticles');
+            const wrapper = document.getElementById('signatureWrapper');
+            if (!container || !wrapper) return;
+
+            const rect = wrapper.getBoundingClientRect();
+            const colors = ['#00ffff', '#ff00ff', '#00ff88'];
+
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.className = 'ink-particle';
+
+                    const progress = i / 30;
+                    particle.style.left = `${rect.left + (rect.width * progress) + (Math.random() - 0.5) * 40}px`;
+                    particle.style.top = `${rect.top + rect.height * 0.5 + (Math.random() - 0.5) * 30}px`;
+
+                    particle.style.setProperty('--tx', `${(Math.random() - 0.5) * 60}px`);
+                    particle.style.setProperty('--ty', `${(Math.random() - 0.5) * 60}px`);
+
+                    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.boxShadow = `0 0 6px ${particle.style.background}`;
+
+                    container.appendChild(particle);
+                    setTimeout(() => particle.classList.add('active'), 10);
+                    setTimeout(() => particle.remove(), 800);
+                }, i * 130);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && !e.target.matches('input, textarea')) {
+                e.preventDefault();
+                playSignature();
+            }
+        });
+
+    </script>
 </body>
 
 </html>
