@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -870,61 +870,61 @@
     <div class="toast" id="toast"></div>
     <div class="kbd-hint">Ctrl+K: Search | Konami Code: Matrix Rain</div>
     <div class="main-container" id="main-content">
-<h1>🎯 Quick Reference Tables</h1>
-<h2>High-Value Artifacts by Investigation Type</h2>
-<table>
-<thead>
-<tr>
-<th>Investigation Goal</th>
-<th>Primary Artifacts</th>
-<th>Tools</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Program Execution</strong></td>
-<td>Prefetch, AmCache, ShimCache, BAM/DAM, SRUM</td>
-<td>PECmd, AmcacheParser, AppCompatCacheParser, SrumECmd</td>
-</tr>
-<tr>
-<td><strong>File/Folder Access</strong></td>
-<td>ShellBags, Jump Lists, LNK Files, Recent Files</td>
-<td>SBECmd, JLECmd, LECmd</td>
-</tr>
-<tr>
-<td><strong>User Activity</strong></td>
-<td>NTUSER.DAT, UsrClass.dat, BAM, UserAssist</td>
-<td>Registry Explorer, RegRipper</td>
-</tr>
-<tr>
-<td><strong>Persistence</strong></td>
-<td>Run Keys, Services, Scheduled Tasks, WMI</td>
-<td>RECmd, Autoruns, Registry Explorer</td>
-</tr>
-<tr>
-<td><strong>Lateral Movement</strong></td>
-<td>Event Logs (4624, 4648), RDP Cache, PSExec</td>
-<td>EvtxECmd, Chainsaw, Hayabusa</td>
-</tr>
-<tr>
-<td><strong>Data Exfiltration</strong></td>
-<td>SRUM, USB History, Cloud Storage, Browser</td>
-<td>SrumECmd, USBDeview, Hindsight</td>
-</tr>
-<tr>
-<td><strong>Malware Analysis</strong></td>
-<td>Prefetch, MFT, $J (USN), Memory</td>
-<td>MFTECmd, Volatility, PECmd</td>
-</tr>
-<tr>
-<td><strong>Timeline Creation</strong></td>
-<td>All of the above</td>
-<td>KAPE, Plaso, Timeline Explorer</td>
-</tr>
-</tbody>
-</table>
-<h2>Critical File Locations Quick Reference</h2>
-<pre><code>📁 SYSTEM HIVE
+        <h1>🎯 Quick Reference Tables</h1>
+        <h2>High-Value Artifacts by Investigation Type</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Investigation Goal</th>
+                    <th>Primary Artifacts</th>
+                    <th>Tools</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Program Execution</strong></td>
+                    <td>Prefetch, AmCache, ShimCache, BAM/DAM, SRUM</td>
+                    <td>PECmd, AmcacheParser, AppCompatCacheParser, SrumECmd</td>
+                </tr>
+                <tr>
+                    <td><strong>File/Folder Access</strong></td>
+                    <td>ShellBags, Jump Lists, LNK Files, Recent Files</td>
+                    <td>SBECmd, JLECmd, LECmd</td>
+                </tr>
+                <tr>
+                    <td><strong>User Activity</strong></td>
+                    <td>NTUSER.DAT, UsrClass.dat, BAM, UserAssist</td>
+                    <td>Registry Explorer, RegRipper</td>
+                </tr>
+                <tr>
+                    <td><strong>Persistence</strong></td>
+                    <td>Run Keys, Services, Scheduled Tasks, WMI</td>
+                    <td>RECmd, Autoruns, Registry Explorer</td>
+                </tr>
+                <tr>
+                    <td><strong>Lateral Movement</strong></td>
+                    <td>Event Logs (4624, 4648), RDP Cache, PSExec</td>
+                    <td>EvtxECmd, Chainsaw, Hayabusa</td>
+                </tr>
+                <tr>
+                    <td><strong>Data Exfiltration</strong></td>
+                    <td>SRUM, USB History, Cloud Storage, Browser</td>
+                    <td>SrumECmd, USBDeview, Hindsight</td>
+                </tr>
+                <tr>
+                    <td><strong>Malware Analysis</strong></td>
+                    <td>Prefetch, MFT, $J (USN), Memory</td>
+                    <td>MFTECmd, Volatility, PECmd</td>
+                </tr>
+                <tr>
+                    <td><strong>Timeline Creation</strong></td>
+                    <td>All of the above</td>
+                    <td>KAPE, Plaso, Timeline Explorer</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Critical File Locations Quick Reference</h2>
+        <pre><code>📁 SYSTEM HIVE
 C:\Windows\System32\config\SYSTEM
 
 📁 SOFTWARE HIVE  
@@ -974,238 +974,239 @@ Chrome: C:\Users\&lt;user&gt;\AppData\Local\Google\Chrome\User Data\Default\
 Firefox: C:\Users\&lt;user&gt;\AppData\Roaming\Mozilla\Firefox\Profiles\
 Edge: C:\Users\&lt;user&gt;\AppData\Local\Microsoft\Edge\User Data\Default\
 </code></pre>
-<h2>Important Event IDs Quick Reference</h2>
-<table>
-<thead>
-<tr>
-<th>Event ID</th>
-<th>Log</th>
-<th>Description</th>
-<th>CTF Relevance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>4624</strong></td>
-<td>Security</td>
-<td>Successful Logon</td>
-<td>Login analysis, lateral movement</td>
-</tr>
-<tr>
-<td><strong>4625</strong></td>
-<td>Security</td>
-<td>Failed Logon</td>
-<td>Brute force detection</td>
-</tr>
-<tr>
-<td><strong>4648</strong></td>
-<td>Security</td>
-<td>Explicit Credential Logon</td>
-<td>Credential use, runas</td>
-</tr>
-<tr>
-<td><strong>4672</strong></td>
-<td>Security</td>
-<td>Special Privileges Assigned</td>
-<td>Admin activity</td>
-</tr>
-<tr>
-<td><strong>4688</strong></td>
-<td>Security</td>
-<td>Process Creation</td>
-<td>Command execution (if enabled)</td>
-</tr>
-<tr>
-<td><strong>4698</strong></td>
-<td>Security</td>
-<td>Scheduled Task Created</td>
-<td>Persistence</td>
-</tr>
-<tr>
-<td><strong>4699</strong></td>
-<td>Security</td>
-<td>Scheduled Task Deleted</td>
-<td>Anti-forensics</td>
-</tr>
-<tr>
-<td><strong>4702</strong></td>
-<td>Security</td>
-<td>Scheduled Task Updated</td>
-<td>Persistence modification</td>
-</tr>
-<tr>
-<td><strong>4720</strong></td>
-<td>Security</td>
-<td>User Account Created</td>
-<td>Account creation</td>
-</tr>
-<tr>
-<td><strong>4732</strong></td>
-<td>Security</td>
-<td>Member Added to Local Group</td>
-<td>Privilege escalation</td>
-</tr>
-<tr>
-<td><strong>4776</strong></td>
-<td>Security</td>
-<td>NTLM Authentication</td>
-<td>Auth analysis</td>
-</tr>
-<tr>
-<td><strong>7045</strong></td>
-<td>System</td>
-<td>Service Installed</td>
-<td>Persistence, malware</td>
-</tr>
-<tr>
-<td><strong>7040</strong></td>
-<td>System</td>
-<td>Service Start Type Changed</td>
-<td>Service manipulation</td>
-</tr>
-<tr>
-<td><strong>1</strong></td>
-<td>Sysmon</td>
-<td>Process Create</td>
-<td>Detailed execution</td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td>Sysmon</td>
-<td>Network Connection</td>
-<td>C2 detection</td>
-</tr>
-<tr>
-<td><strong>7</strong></td>
-<td>Sysmon</td>
-<td>Image Loaded</td>
-<td>DLL analysis</td>
-</tr>
-<tr>
-<td><strong>11</strong></td>
-<td>Sysmon</td>
-<td>File Create</td>
-<td>File creation tracking</td>
-</tr>
-<tr>
-<td><strong>13</strong></td>
-<td>Sysmon</td>
-<td>Registry Value Set</td>
-<td>Registry monitoring</td>
-</tr>
-<tr>
-<td><strong>22</strong></td>
-<td>Sysmon</td>
-<td>DNS Query</td>
-<td>DNS analysis</td>
-</tr>
-<tr>
-<td><strong>1102</strong></td>
-<td>Security</td>
-<td>Audit Log Cleared</td>
-<td>Anti-forensics</td>
-</tr>
-<tr>
-<td><strong>104</strong></td>
-<td>System</td>
-<td>Log Cleared</td>
-<td>Anti-forensics</td>
-</tr>
-<tr>
-<td><strong>4104</strong></td>
-<td>PowerShell</td>
-<td>Script Block Logging</td>
-<td>PowerShell commands</td>
-</tr>
-<tr>
-<td><strong>4103</strong></td>
-<td>PowerShell</td>
-<td>Module Logging</td>
-<td>PowerShell activity</td>
-</tr>
-<tr>
-<td><strong>400/403</strong></td>
-<td>PowerShell</td>
-<td>Engine Start/Stop</td>
-<td>PowerShell sessions</td>
-</tr>
-</tbody>
-</table>
-<h2>Logon Type Reference</h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-<th>Common Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>2</strong></td>
-<td>Interactive (Console)</td>
-<td>Physical/local logon</td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td>Network</td>
-<td>SMB, net use, PsExec (network)</td>
-</tr>
-<tr>
-<td><strong>4</strong></td>
-<td>Batch</td>
-<td>Scheduled tasks</td>
-</tr>
-<tr>
-<td><strong>5</strong></td>
-<td>Service</td>
-<td>Service account logon</td>
-</tr>
-<tr>
-<td><strong>7</strong></td>
-<td>Unlock</td>
-<td>Workstation unlock</td>
-</tr>
-<tr>
-<td><strong>8</strong></td>
-<td>NetworkCleartext</td>
-<td>IIS Basic Auth</td>
-</tr>
-<tr>
-<td><strong>9</strong></td>
-<td>NewCredentials</td>
-<td>RunAs /netonly</td>
-</tr>
-<tr>
-<td><strong>10</strong></td>
-<td>RemoteInteractive</td>
-<td>RDP, Terminal Services</td>
-</tr>
-<tr>
-<td><strong>11</strong></td>
-<td>CachedInteractive</td>
-<td>Cached domain credentials</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1>🛠️ Essential Tools &amp; Commands</h1>
-<h2>Eric Zimmerman Tools</h2>
-<blockquote>
-<p><strong>Download</strong>: https://ericzimmerman.github.io/#!index.md<br />
-<strong>Update Command</strong>: <code>.\Get-ZimmermanTools.ps1 -Dest C:\Tools\EZ</code></p>
-</blockquote>
-<h3>MFTECmd - Master File Table Parser</h3>
-<p><strong>Purpose</strong>: Parse NTFS $MFT for file system metadata, timestamps, and deleted files</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Find deleted files and their original timestamps</li>
-<li>Identify anti-forensic timestamp manipulation (timestomping)</li>
-<li>Track file creation in suspicious locations</li>
-<li>Recover file paths and parent directories</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Parse $MFT to CSV
+        <h2>Important Event IDs Quick Reference</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Description</th>
+                    <th>CTF Relevance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>4624</strong></td>
+                    <td>Security</td>
+                    <td>Successful Logon</td>
+                    <td>Login analysis, lateral movement</td>
+                </tr>
+                <tr>
+                    <td><strong>4625</strong></td>
+                    <td>Security</td>
+                    <td>Failed Logon</td>
+                    <td>Brute force detection</td>
+                </tr>
+                <tr>
+                    <td><strong>4648</strong></td>
+                    <td>Security</td>
+                    <td>Explicit Credential Logon</td>
+                    <td>Credential use, runas</td>
+                </tr>
+                <tr>
+                    <td><strong>4672</strong></td>
+                    <td>Security</td>
+                    <td>Special Privileges Assigned</td>
+                    <td>Admin activity</td>
+                </tr>
+                <tr>
+                    <td><strong>4688</strong></td>
+                    <td>Security</td>
+                    <td>Process Creation</td>
+                    <td>Command execution (if enabled)</td>
+                </tr>
+                <tr>
+                    <td><strong>4698</strong></td>
+                    <td>Security</td>
+                    <td>Scheduled Task Created</td>
+                    <td>Persistence</td>
+                </tr>
+                <tr>
+                    <td><strong>4699</strong></td>
+                    <td>Security</td>
+                    <td>Scheduled Task Deleted</td>
+                    <td>Anti-forensics</td>
+                </tr>
+                <tr>
+                    <td><strong>4702</strong></td>
+                    <td>Security</td>
+                    <td>Scheduled Task Updated</td>
+                    <td>Persistence modification</td>
+                </tr>
+                <tr>
+                    <td><strong>4720</strong></td>
+                    <td>Security</td>
+                    <td>User Account Created</td>
+                    <td>Account creation</td>
+                </tr>
+                <tr>
+                    <td><strong>4732</strong></td>
+                    <td>Security</td>
+                    <td>Member Added to Local Group</td>
+                    <td>Privilege escalation</td>
+                </tr>
+                <tr>
+                    <td><strong>4776</strong></td>
+                    <td>Security</td>
+                    <td>NTLM Authentication</td>
+                    <td>Auth analysis</td>
+                </tr>
+                <tr>
+                    <td><strong>7045</strong></td>
+                    <td>System</td>
+                    <td>Service Installed</td>
+                    <td>Persistence, malware</td>
+                </tr>
+                <tr>
+                    <td><strong>7040</strong></td>
+                    <td>System</td>
+                    <td>Service Start Type Changed</td>
+                    <td>Service manipulation</td>
+                </tr>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>Sysmon</td>
+                    <td>Process Create</td>
+                    <td>Detailed execution</td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>Sysmon</td>
+                    <td>Network Connection</td>
+                    <td>C2 detection</td>
+                </tr>
+                <tr>
+                    <td><strong>7</strong></td>
+                    <td>Sysmon</td>
+                    <td>Image Loaded</td>
+                    <td>DLL analysis</td>
+                </tr>
+                <tr>
+                    <td><strong>11</strong></td>
+                    <td>Sysmon</td>
+                    <td>File Create</td>
+                    <td>File creation tracking</td>
+                </tr>
+                <tr>
+                    <td><strong>13</strong></td>
+                    <td>Sysmon</td>
+                    <td>Registry Value Set</td>
+                    <td>Registry monitoring</td>
+                </tr>
+                <tr>
+                    <td><strong>22</strong></td>
+                    <td>Sysmon</td>
+                    <td>DNS Query</td>
+                    <td>DNS analysis</td>
+                </tr>
+                <tr>
+                    <td><strong>1102</strong></td>
+                    <td>Security</td>
+                    <td>Audit Log Cleared</td>
+                    <td>Anti-forensics</td>
+                </tr>
+                <tr>
+                    <td><strong>104</strong></td>
+                    <td>System</td>
+                    <td>Log Cleared</td>
+                    <td>Anti-forensics</td>
+                </tr>
+                <tr>
+                    <td><strong>4104</strong></td>
+                    <td>PowerShell</td>
+                    <td>Script Block Logging</td>
+                    <td>PowerShell commands</td>
+                </tr>
+                <tr>
+                    <td><strong>4103</strong></td>
+                    <td>PowerShell</td>
+                    <td>Module Logging</td>
+                    <td>PowerShell activity</td>
+                </tr>
+                <tr>
+                    <td><strong>400/403</strong></td>
+                    <td>PowerShell</td>
+                    <td>Engine Start/Stop</td>
+                    <td>PowerShell sessions</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Logon Type Reference</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Common Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td>Interactive (Console)</td>
+                    <td>Physical/local logon</td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>Network</td>
+                    <td>SMB, net use, PsExec (network)</td>
+                </tr>
+                <tr>
+                    <td><strong>4</strong></td>
+                    <td>Batch</td>
+                    <td>Scheduled tasks</td>
+                </tr>
+                <tr>
+                    <td><strong>5</strong></td>
+                    <td>Service</td>
+                    <td>Service account logon</td>
+                </tr>
+                <tr>
+                    <td><strong>7</strong></td>
+                    <td>Unlock</td>
+                    <td>Workstation unlock</td>
+                </tr>
+                <tr>
+                    <td><strong>8</strong></td>
+                    <td>NetworkCleartext</td>
+                    <td>IIS Basic Auth</td>
+                </tr>
+                <tr>
+                    <td><strong>9</strong></td>
+                    <td>NewCredentials</td>
+                    <td>RunAs /netonly</td>
+                </tr>
+                <tr>
+                    <td><strong>10</strong></td>
+                    <td>RemoteInteractive</td>
+                    <td>RDP, Terminal Services</td>
+                </tr>
+                <tr>
+                    <td><strong>11</strong></td>
+                    <td>CachedInteractive</td>
+                    <td>Cached domain credentials</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <h1>🛠️ Essential Tools &amp; Commands</h1>
+        <h2>Eric Zimmerman Tools</h2>
+        <blockquote>
+            <p><strong>Download</strong>: https://ericzimmerman.github.io/#!index.md<br />
+                <strong>Update Command</strong>: <code>.\Get-ZimmermanTools.ps1 -Dest C:\Tools\EZ</code>
+            </p>
+        </blockquote>
+        <h3>MFTECmd - Master File Table Parser</h3>
+        <p><strong>Purpose</strong>: Parse NTFS $MFT for file system metadata, timestamps, and deleted files</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Find deleted files and their original timestamps</li>
+            <li>Identify anti-forensic timestamp manipulation (timestomping)</li>
+            <li>Track file creation in suspicious locations</li>
+            <li>Recover file paths and parent directories</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Parse $MFT to CSV
 MFTECmd.exe -f "C:\$MFT" --csv C:\output --csvf mft_output.csv
 
 # Parse $MFT with body file output (for timeline)
@@ -1220,69 +1221,69 @@ MFTECmd.exe -f "C:\$Boot" --csv C:\output
 # Parse $SDS (Security Descriptors)
 MFTECmd.exe -f "C:\$Secure:$SDS" --csv C:\output
 </code></pre>
-<p><strong>Key Output Fields</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>EntryNumber</code></td>
-<td>MFT record number</td>
-</tr>
-<tr>
-<td><code>ParentPath</code></td>
-<td>Full path to parent directory</td>
-</tr>
-<tr>
-<td><code>FileName</code></td>
-<td>File name</td>
-</tr>
-<tr>
-<td><code>Created0x10</code></td>
-<td>$STANDARD_INFORMATION Created timestamp</td>
-</tr>
-<tr>
-<td><code>Created0x30</code></td>
-<td>$FILE_NAME Created timestamp</td>
-</tr>
-<tr>
-<td><code>InUse</code></td>
-<td>Whether file is deleted (False = deleted)</td>
-</tr>
-<tr>
-<td><code>IsDirectory</code></td>
-<td>Directory flag</td>
-</tr>
-<tr>
-<td><code>Extension</code></td>
-<td>File extension</td>
-</tr>
-<tr>
-<td><code>FileSize</code></td>
-<td>Size in bytes</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Timestomping Detection</strong>:</p>
-<pre><code>If Created0x10 &lt; Created0x30 → Possible timestomping
+        <p><strong>Key Output Fields</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>EntryNumber</code></td>
+                    <td>MFT record number</td>
+                </tr>
+                <tr>
+                    <td><code>ParentPath</code></td>
+                    <td>Full path to parent directory</td>
+                </tr>
+                <tr>
+                    <td><code>FileName</code></td>
+                    <td>File name</td>
+                </tr>
+                <tr>
+                    <td><code>Created0x10</code></td>
+                    <td>$STANDARD_INFORMATION Created timestamp</td>
+                </tr>
+                <tr>
+                    <td><code>Created0x30</code></td>
+                    <td>$FILE_NAME Created timestamp</td>
+                </tr>
+                <tr>
+                    <td><code>InUse</code></td>
+                    <td>Whether file is deleted (False = deleted)</td>
+                </tr>
+                <tr>
+                    <td><code>IsDirectory</code></td>
+                    <td>Directory flag</td>
+                </tr>
+                <tr>
+                    <td><code>Extension</code></td>
+                    <td>File extension</td>
+                </tr>
+                <tr>
+                    <td><code>FileSize</code></td>
+                    <td>Size in bytes</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Timestomping Detection</strong>:</p>
+        <pre><code>If Created0x10 &lt; Created0x30 → Possible timestomping
 $STANDARD_INFO timestamps can be modified; $FILE_NAME cannot (without special tools)
 </code></pre>
-<hr />
-<h3>PECmd - Prefetch Parser</h3>
-<p><strong>Purpose</strong>: Parse Windows Prefetch files for program execution evidence</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Prove program execution</li>
-<li>Determine execution count and timestamps</li>
-<li>Identify files/directories accessed by executable</li>
-<li>Track malware execution</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Parse single prefetch file
+        <hr />
+        <h3>PECmd - Prefetch Parser</h3>
+        <p><strong>Purpose</strong>: Parse Windows Prefetch files for program execution evidence</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Prove program execution</li>
+            <li>Determine execution count and timestamps</li>
+            <li>Identify files/directories accessed by executable</li>
+            <li>Track malware execution</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Parse single prefetch file
 PECmd.exe -f "C:\Windows\Prefetch\CMD.EXE-4A81B364.pf" --csv C:\output
 
 # Parse entire Prefetch directory
@@ -1294,64 +1295,64 @@ PECmd.exe -d "C:\Windows\Prefetch" --json C:\output
 # Parse with timeline (body file)
 PECmd.exe -d "C:\Windows\Prefetch" -q --csv C:\output
 </code></pre>
-<p><strong>Key Output Fields</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ExecutableName</code></td>
-<td>Name of executed program</td>
-</tr>
-<tr>
-<td><code>RunCount</code></td>
-<td>Number of times executed</td>
-</tr>
-<tr>
-<td><code>LastRun</code></td>
-<td>Most recent execution time</td>
-</tr>
-<tr>
-<td><code>PreviousRun0-6</code></td>
-<td>Previous 7 execution times (Win8+)</td>
-</tr>
-<tr>
-<td><code>FilesLoaded</code></td>
-<td>Files accessed during execution</td>
-</tr>
-<tr>
-<td><code>Directories</code></td>
-<td>Directories accessed</td>
-</tr>
-<tr>
-<td><code>Hash</code></td>
-<td>Prefetch hash (path-based)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Important Notes</strong>:</p>
-<ul>
-<li>Windows 7: 1 timestamp, up to 128 prefetch files</li>
-<li>Windows 8+: 8 timestamps, up to 1024 prefetch files</li>
-<li>Prefetch file name format: <code>EXECUTABLE.EXE-HASH.pf</code></li>
-<li>Same exe from different paths = different hash</li>
-</ul>
-<hr />
-<h3>LECmd - LNK File Parser</h3>
-<p><strong>Purpose</strong>: Parse Windows shortcut (LNK) files for file access evidence</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Track accessed files and folders</li>
-<li>Identify files accessed from external drives</li>
-<li>Recover paths to deleted files</li>
-<li>Find evidence of USB device usage</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Parse single LNK file
+        <p><strong>Key Output Fields</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>ExecutableName</code></td>
+                    <td>Name of executed program</td>
+                </tr>
+                <tr>
+                    <td><code>RunCount</code></td>
+                    <td>Number of times executed</td>
+                </tr>
+                <tr>
+                    <td><code>LastRun</code></td>
+                    <td>Most recent execution time</td>
+                </tr>
+                <tr>
+                    <td><code>PreviousRun0-6</code></td>
+                    <td>Previous 7 execution times (Win8+)</td>
+                </tr>
+                <tr>
+                    <td><code>FilesLoaded</code></td>
+                    <td>Files accessed during execution</td>
+                </tr>
+                <tr>
+                    <td><code>Directories</code></td>
+                    <td>Directories accessed</td>
+                </tr>
+                <tr>
+                    <td><code>Hash</code></td>
+                    <td>Prefetch hash (path-based)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Important Notes</strong>:</p>
+        <ul>
+            <li>Windows 7: 1 timestamp, up to 128 prefetch files</li>
+            <li>Windows 8+: 8 timestamps, up to 1024 prefetch files</li>
+            <li>Prefetch file name format: <code>EXECUTABLE.EXE-HASH.pf</code></li>
+            <li>Same exe from different paths = different hash</li>
+        </ul>
+        <hr />
+        <h3>LECmd - LNK File Parser</h3>
+        <p><strong>Purpose</strong>: Parse Windows shortcut (LNK) files for file access evidence</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Track accessed files and folders</li>
+            <li>Identify files accessed from external drives</li>
+            <li>Recover paths to deleted files</li>
+            <li>Find evidence of USB device usage</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Parse single LNK file
 LECmd.exe -f "C:\Users\user\Desktop\file.lnk" --csv C:\output
 
 # Parse Recent folder
@@ -1363,73 +1364,73 @@ LECmd.exe -d "C:\path" --csv C:\output --all
 # Quiet mode (less verbose)
 LECmd.exe -d "C:\path" -q --csv C:\output
 </code></pre>
-<p><strong>Key Output Fields</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SourceFile</code></td>
-<td>Path to LNK file</td>
-</tr>
-<tr>
-<td><code>TargetIDAbsolutePath</code></td>
-<td>Original target path</td>
-</tr>
-<tr>
-<td><code>LocalPath</code></td>
-<td>Local path to target</td>
-</tr>
-<tr>
-<td><code>NetworkPath</code></td>
-<td>Network path (if applicable)</td>
-</tr>
-<tr>
-<td><code>DriveSerialNumber</code></td>
-<td>Volume serial number</td>
-</tr>
-<tr>
-<td><code>DriveType</code></td>
-<td>Fixed, Removable, Network</td>
-</tr>
-<tr>
-<td><code>VolumeLabel</code></td>
-<td>Volume name</td>
-</tr>
-<tr>
-<td><code>MachineID</code></td>
-<td>NetBIOS name</td>
-</tr>
-<tr>
-<td><code>TargetCreated</code></td>
-<td>Target file creation time</td>
-</tr>
-<tr>
-<td><code>TargetModified</code></td>
-<td>Target file modification time</td>
-</tr>
-<tr>
-<td><code>TargetAccessed</code></td>
-<td>Target file access time</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3>JLECmd - Jump List Parser</h3>
-<p><strong>Purpose</strong>: Parse Windows Jump Lists for recent file access evidence</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Track recently accessed files per application</li>
-<li>Identify files opened from specific applications</li>
-<li>Find evidence of deleted files</li>
-<li>Correlate application usage with file access</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Parse AutomaticDestinations
+        <p><strong>Key Output Fields</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>SourceFile</code></td>
+                    <td>Path to LNK file</td>
+                </tr>
+                <tr>
+                    <td><code>TargetIDAbsolutePath</code></td>
+                    <td>Original target path</td>
+                </tr>
+                <tr>
+                    <td><code>LocalPath</code></td>
+                    <td>Local path to target</td>
+                </tr>
+                <tr>
+                    <td><code>NetworkPath</code></td>
+                    <td>Network path (if applicable)</td>
+                </tr>
+                <tr>
+                    <td><code>DriveSerialNumber</code></td>
+                    <td>Volume serial number</td>
+                </tr>
+                <tr>
+                    <td><code>DriveType</code></td>
+                    <td>Fixed, Removable, Network</td>
+                </tr>
+                <tr>
+                    <td><code>VolumeLabel</code></td>
+                    <td>Volume name</td>
+                </tr>
+                <tr>
+                    <td><code>MachineID</code></td>
+                    <td>NetBIOS name</td>
+                </tr>
+                <tr>
+                    <td><code>TargetCreated</code></td>
+                    <td>Target file creation time</td>
+                </tr>
+                <tr>
+                    <td><code>TargetModified</code></td>
+                    <td>Target file modification time</td>
+                </tr>
+                <tr>
+                    <td><code>TargetAccessed</code></td>
+                    <td>Target file access time</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <h3>JLECmd - Jump List Parser</h3>
+        <p><strong>Purpose</strong>: Parse Windows Jump Lists for recent file access evidence</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Track recently accessed files per application</li>
+            <li>Identify files opened from specific applications</li>
+            <li>Find evidence of deleted files</li>
+            <li>Correlate application usage with file access</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Parse AutomaticDestinations
 JLECmd.exe -d "C:\Users\user\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations" --csv C:\output --csvf auto_jl.csv
 
 # Parse CustomDestinations
@@ -1441,81 +1442,81 @@ JLECmd.exe -f "file.automaticDestinations-ms" --csv C:\output
 # With all embedded LNK details
 JLECmd.exe -d "C:\path" --csv C:\output --ld
 </code></pre>
-<p><strong>Jump List App IDs</strong> (Common):</p>
-<table>
-<thead>
-<tr>
-<th>AppID</th>
-<th>Application</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>1b4dd67f29cb1962</code></td>
-<td>Windows Explorer</td>
-</tr>
-<tr>
-<td><code>5f7b5f1e01b83767</code></td>
-<td>Notepad</td>
-</tr>
-<tr>
-<td><code>9839aec31243a928</code></td>
-<td>Notepad++</td>
-</tr>
-<tr>
-<td><code>a7bd71699cd38d1c</code></td>
-<td>Notepad (Win7)</td>
-</tr>
-<tr>
-<td><code>7e4dca80246863e3</code></td>
-<td>Control Panel</td>
-</tr>
-<tr>
-<td><code>1bc392b8e104a00e</code></td>
-<td>Remote Desktop</td>
-</tr>
-<tr>
-<td><code>b8ab77100df80ab2</code></td>
-<td>Chrome</td>
-</tr>
-<tr>
-<td><code>9b9cdc69c1c24e2b</code></td>
-<td>Thunderbird</td>
-</tr>
-<tr>
-<td><code>5d696d521de238c3</code></td>
-<td>Chrome (2)</td>
-</tr>
-<tr>
-<td><code>28c8b86deab549a1</code></td>
-<td>Internet Explorer</td>
-</tr>
-<tr>
-<td><code>f01b4d95cf55d32a</code></td>
-<td>Windows Explorer (Win7)</td>
-</tr>
-<tr>
-<td><code>12dc1ea8e34b5a6</code></td>
-<td>Paint</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Jump List Location Decoder</strong>:</p>
-<pre><code>AutomaticDestinations: Created automatically by Windows
+        <p><strong>Jump List App IDs</strong> (Common):</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>AppID</th>
+                    <th>Application</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>1b4dd67f29cb1962</code></td>
+                    <td>Windows Explorer</td>
+                </tr>
+                <tr>
+                    <td><code>5f7b5f1e01b83767</code></td>
+                    <td>Notepad</td>
+                </tr>
+                <tr>
+                    <td><code>9839aec31243a928</code></td>
+                    <td>Notepad++</td>
+                </tr>
+                <tr>
+                    <td><code>a7bd71699cd38d1c</code></td>
+                    <td>Notepad (Win7)</td>
+                </tr>
+                <tr>
+                    <td><code>7e4dca80246863e3</code></td>
+                    <td>Control Panel</td>
+                </tr>
+                <tr>
+                    <td><code>1bc392b8e104a00e</code></td>
+                    <td>Remote Desktop</td>
+                </tr>
+                <tr>
+                    <td><code>b8ab77100df80ab2</code></td>
+                    <td>Chrome</td>
+                </tr>
+                <tr>
+                    <td><code>9b9cdc69c1c24e2b</code></td>
+                    <td>Thunderbird</td>
+                </tr>
+                <tr>
+                    <td><code>5d696d521de238c3</code></td>
+                    <td>Chrome (2)</td>
+                </tr>
+                <tr>
+                    <td><code>28c8b86deab549a1</code></td>
+                    <td>Internet Explorer</td>
+                </tr>
+                <tr>
+                    <td><code>f01b4d95cf55d32a</code></td>
+                    <td>Windows Explorer (Win7)</td>
+                </tr>
+                <tr>
+                    <td><code>12dc1ea8e34b5a6</code></td>
+                    <td>Paint</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Jump List Location Decoder</strong>:</p>
+        <pre><code>AutomaticDestinations: Created automatically by Windows
 CustomDestinations: Created by applications (pinned items, custom recent)
 </code></pre>
-<hr />
-<h3>SBECmd - ShellBags Explorer (CLI)</h3>
-<p><strong>Purpose</strong>: Parse ShellBags for folder access history (including deleted folders)</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Track folder access/browsing history</li>
-<li>Find evidence of accessed USB/removable drives</li>
-<li>Identify deleted folder access</li>
-<li>Prove user interaction with specific directories</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Parse UsrClass.dat
+        <hr />
+        <h3>SBECmd - ShellBags Explorer (CLI)</h3>
+        <p><strong>Purpose</strong>: Parse ShellBags for folder access history (including deleted folders)</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Track folder access/browsing history</li>
+            <li>Find evidence of accessed USB/removable drives</li>
+            <li>Identify deleted folder access</li>
+            <li>Prove user interaction with specific directories</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Parse UsrClass.dat
 SBECmd.exe -d "C:\Users\user\AppData\Local\Microsoft\Windows" --csv C:\output
 
 # Parse NTUSER.DAT
@@ -1527,57 +1528,57 @@ SBECmd.exe --hive "D:\Evidence\UsrClass.dat" --csv C:\output --csvf shellbags.cs
 # Live system (use with caution)
 SBECmd.exe -l --csv C:\output
 </code></pre>
-<p><strong>Key Output Fields</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AbsolutePath</code></td>
-<td>Full folder path</td>
-</tr>
-<tr>
-<td><code>ShellType</code></td>
-<td>Type of shell item</td>
-</tr>
-<tr>
-<td><code>CreatedOn</code></td>
-<td>First access timestamp</td>
-</tr>
-<tr>
-<td><code>ModifiedOn</code></td>
-<td>Last modification</td>
-</tr>
-<tr>
-<td><code>AccessedOn</code></td>
-<td>Last access</td>
-</tr>
-<tr>
-<td><code>LastInteracted</code></td>
-<td>Last user interaction</td>
-</tr>
-<tr>
-<td><code>MFTID</code></td>
-<td>MFT entry (if available)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3>AmcacheParser - Amcache.hve Parser</h3>
-<p><strong>Purpose</strong>: Parse Amcache for program execution and installation evidence</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Track program execution (with SHA1 hashes!)</li>
-<li>Identify malware and associated files</li>
-<li>Find portable application execution</li>
-<li>Track installed programs</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Parse Amcache.hve
+        <p><strong>Key Output Fields</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>AbsolutePath</code></td>
+                    <td>Full folder path</td>
+                </tr>
+                <tr>
+                    <td><code>ShellType</code></td>
+                    <td>Type of shell item</td>
+                </tr>
+                <tr>
+                    <td><code>CreatedOn</code></td>
+                    <td>First access timestamp</td>
+                </tr>
+                <tr>
+                    <td><code>ModifiedOn</code></td>
+                    <td>Last modification</td>
+                </tr>
+                <tr>
+                    <td><code>AccessedOn</code></td>
+                    <td>Last access</td>
+                </tr>
+                <tr>
+                    <td><code>LastInteracted</code></td>
+                    <td>Last user interaction</td>
+                </tr>
+                <tr>
+                    <td><code>MFTID</code></td>
+                    <td>MFT entry (if available)</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <h3>AmcacheParser - Amcache.hve Parser</h3>
+        <p><strong>Purpose</strong>: Parse Amcache for program execution and installation evidence</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Track program execution (with SHA1 hashes!)</li>
+            <li>Identify malware and associated files</li>
+            <li>Find portable application execution</li>
+            <li>Track installed programs</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Parse Amcache.hve
 AmcacheParser.exe -f "C:\Windows\AppCompat\Programs\Amcache.hve" --csv C:\output --csvf amcache.csv
 
 # Include NTFS metadata
@@ -1586,67 +1587,67 @@ AmcacheParser.exe -f "C:\Windows\AppCompat\Programs\Amcache.hve" --csv C:\output
 # Parse with program entries
 AmcacheParser.exe -f "Amcache.hve" --csv C:\output --csvf amcache.csv
 </code></pre>
-<p><strong>Key Output Fields</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SHA1</code></td>
-<td>File hash (very useful!)</td>
-</tr>
-<tr>
-<td><code>FullPath</code></td>
-<td>Path to executable</td>
-</tr>
-<tr>
-<td><code>FileKeyLastWriteTimestamp</code></td>
-<td>Last modification</td>
-</tr>
-<tr>
-<td><code>CompanyName</code></td>
-<td>Publisher</td>
-</tr>
-<tr>
-<td><code>FileDescription</code></td>
-<td>Description</td>
-</tr>
-<tr>
-<td><code>FileVersion</code></td>
-<td>Version</td>
-</tr>
-<tr>
-<td><code>Publisher</code></td>
-<td>Software publisher</td>
-</tr>
-<tr>
-<td><code>InstallDate</code></td>
-<td>Installation date</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Important Notes</strong>:</p>
-<ul>
-<li>Contains SHA1 hashes - great for malware identification</li>
-<li>Persists even after file deletion</li>
-<li>Different keys for different Windows versions</li>
-</ul>
-<hr />
-<h3>AppCompatCacheParser - ShimCache Parser</h3>
-<p><strong>Purpose</strong>: Parse Application Compatibility Cache (ShimCache)</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Track program execution (no hash, but paths)</li>
-<li>Find evidence of deleted programs</li>
-<li>Identify malware in execution history</li>
-<li>Note: Execution is NOT guaranteed (just loaded)</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Parse SYSTEM hive
+        <p><strong>Key Output Fields</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>SHA1</code></td>
+                    <td>File hash (very useful!)</td>
+                </tr>
+                <tr>
+                    <td><code>FullPath</code></td>
+                    <td>Path to executable</td>
+                </tr>
+                <tr>
+                    <td><code>FileKeyLastWriteTimestamp</code></td>
+                    <td>Last modification</td>
+                </tr>
+                <tr>
+                    <td><code>CompanyName</code></td>
+                    <td>Publisher</td>
+                </tr>
+                <tr>
+                    <td><code>FileDescription</code></td>
+                    <td>Description</td>
+                </tr>
+                <tr>
+                    <td><code>FileVersion</code></td>
+                    <td>Version</td>
+                </tr>
+                <tr>
+                    <td><code>Publisher</code></td>
+                    <td>Software publisher</td>
+                </tr>
+                <tr>
+                    <td><code>InstallDate</code></td>
+                    <td>Installation date</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Important Notes</strong>:</p>
+        <ul>
+            <li>Contains SHA1 hashes - great for malware identification</li>
+            <li>Persists even after file deletion</li>
+            <li>Different keys for different Windows versions</li>
+        </ul>
+        <hr />
+        <h3>AppCompatCacheParser - ShimCache Parser</h3>
+        <p><strong>Purpose</strong>: Parse Application Compatibility Cache (ShimCache)</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Track program execution (no hash, but paths)</li>
+            <li>Find evidence of deleted programs</li>
+            <li>Identify malware in execution history</li>
+            <li>Note: Execution is NOT guaranteed (just loaded)</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Parse SYSTEM hive
 AppCompatCacheParser.exe -f "C:\Windows\System32\config\SYSTEM" --csv C:\output --csvf shimcache.csv
 
 # Parse offline SYSTEM hive
@@ -1655,106 +1656,107 @@ AppCompatCacheParser.exe -f "D:\Evidence\SYSTEM" --csv C:\output
 # With control set specification
 AppCompatCacheParser.exe -f "SYSTEM" -c 1 --csv C:\output
 </code></pre>
-<p><strong>Key Output Fields</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Path</code></td>
-<td>Full executable path</td>
-</tr>
-<tr>
-<td><code>LastModifiedTimeUTC</code></td>
-<td>File modification time</td>
-</tr>
-<tr>
-<td><code>Executed</code></td>
-<td>Execution flag (Win7 and earlier only!)</td>
-</tr>
-<tr>
-<td><code>CacheEntryPosition</code></td>
-<td>Position in cache</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Important Notes</strong>:</p>
-<ul>
-<li><strong>Windows 10+</strong>: Execution flag is NOT present - presence only indicates the file was accessed</li>
-<li>Entries are ordered by most recent activity (position 0 = most recent)</li>
-<li>Limit of ~1024 entries</li>
-</ul>
-<hr />
-<h3>SrumECmd - SRUM Database Parser</h3>
-<p><strong>Purpose</strong>: Parse System Resource Usage Monitor database</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Network usage by application</li>
-<li>Application resource usage</li>
-<li>Timeline of application activity</li>
-<li>Data exfiltration indicators</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Parse SRUDB.dat (requires SOFTWARE hive for SID resolution)
+        <p><strong>Key Output Fields</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>Path</code></td>
+                    <td>Full executable path</td>
+                </tr>
+                <tr>
+                    <td><code>LastModifiedTimeUTC</code></td>
+                    <td>File modification time</td>
+                </tr>
+                <tr>
+                    <td><code>Executed</code></td>
+                    <td>Execution flag (Win7 and earlier only!)</td>
+                </tr>
+                <tr>
+                    <td><code>CacheEntryPosition</code></td>
+                    <td>Position in cache</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Important Notes</strong>:</p>
+        <ul>
+            <li><strong>Windows 10+</strong>: Execution flag is NOT present - presence only indicates the file was
+                accessed</li>
+            <li>Entries are ordered by most recent activity (position 0 = most recent)</li>
+            <li>Limit of ~1024 entries</li>
+        </ul>
+        <hr />
+        <h3>SrumECmd - SRUM Database Parser</h3>
+        <p><strong>Purpose</strong>: Parse System Resource Usage Monitor database</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Network usage by application</li>
+            <li>Application resource usage</li>
+            <li>Timeline of application activity</li>
+            <li>Data exfiltration indicators</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Parse SRUDB.dat (requires SOFTWARE hive for SID resolution)
 SrumECmd.exe -f "C:\Windows\System32\sru\SRUDB.dat" -r "C:\Windows\System32\config\SOFTWARE" --csv C:\output
 
 # Parse without registry (less detail)
 SrumECmd.exe -f "SRUDB.dat" --csv C:\output
 </code></pre>
-<p><strong>Key Tables</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Table</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AppResourceUseInfo</code></td>
-<td>Application resource usage</td>
-</tr>
-<tr>
-<td><code>NetworkDataUsage</code></td>
-<td>Network bytes sent/received per app</td>
-</tr>
-<tr>
-<td><code>NetworkConnectivityData</code></td>
-<td>Network connectivity info</td>
-</tr>
-<tr>
-<td><code>AppTimeline</code></td>
-<td>Application timeline</td>
-</tr>
-<tr>
-<td><code>PushNotifications</code></td>
-<td>Push notification data</td>
-</tr>
-</tbody>
-</table>
-<p><strong>High-Value Columns</strong>:</p>
-<ul>
-<li><code>BytesSent</code> / <code>BytesReceived</code> - Data transfer</li>
-<li><code>ExeInfo</code> - Executable path</li>
-<li><code>TimeStamp</code> - Activity time</li>
-<li><code>UserId</code> - Associated user SID</li>
-</ul>
-<hr />
-<h3>EvtxECmd - Event Log Parser</h3>
-<p><strong>Purpose</strong>: Parse Windows Event Logs (EVTX files)</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Security event analysis</li>
-<li>Timeline creation</li>
-<li>Specific event ID extraction</li>
-<li>Mass event log processing</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Parse single EVTX file
+        <p><strong>Key Tables</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Table</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>AppResourceUseInfo</code></td>
+                    <td>Application resource usage</td>
+                </tr>
+                <tr>
+                    <td><code>NetworkDataUsage</code></td>
+                    <td>Network bytes sent/received per app</td>
+                </tr>
+                <tr>
+                    <td><code>NetworkConnectivityData</code></td>
+                    <td>Network connectivity info</td>
+                </tr>
+                <tr>
+                    <td><code>AppTimeline</code></td>
+                    <td>Application timeline</td>
+                </tr>
+                <tr>
+                    <td><code>PushNotifications</code></td>
+                    <td>Push notification data</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>High-Value Columns</strong>:</p>
+        <ul>
+            <li><code>BytesSent</code> / <code>BytesReceived</code> - Data transfer</li>
+            <li><code>ExeInfo</code> - Executable path</li>
+            <li><code>TimeStamp</code> - Activity time</li>
+            <li><code>UserId</code> - Associated user SID</li>
+        </ul>
+        <hr />
+        <h3>EvtxECmd - Event Log Parser</h3>
+        <p><strong>Purpose</strong>: Parse Windows Event Logs (EVTX files)</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Security event analysis</li>
+            <li>Timeline creation</li>
+            <li>Specific event ID extraction</li>
+            <li>Mass event log processing</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Parse single EVTX file
 EvtxECmd.exe -f "C:\Windows\System32\winevt\Logs\Security.evtx" --csv C:\output --csvf security.csv
 
 # Parse all logs in directory
@@ -1769,23 +1771,23 @@ EvtxECmd.exe -f "Security.evtx" --json C:\output
 # Filter by date
 EvtxECmd.exe -f "Security.evtx" --csv C:\output --sd "2024-01-01" --ed "2024-01-31"
 </code></pre>
-<p><strong>Maps Usage</strong>:<br />
-Maps enhance event parsing - update regularly:</p>
-<pre><code class="language-powershell"># Update maps
+        <p><strong>Maps Usage</strong>:<br />
+            Maps enhance event parsing - update regularly:</p>
+        <pre><code class="language-powershell"># Update maps
 .\Get-ZimmermanTools.ps1 -Dest C:\Tools\EZ
 </code></pre>
-<hr />
-<h3>RECmd - Registry Command Line Parser</h3>
-<p><strong>Purpose</strong>: Command-line registry parser with batch processing</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Extract specific registry keys/values</li>
-<li>Batch processing of registry hives</li>
-<li>Custom regex searches</li>
-<li>Export to CSV/JSON</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Parse using batch file
+        <hr />
+        <h3>RECmd - Registry Command Line Parser</h3>
+        <p><strong>Purpose</strong>: Command-line registry parser with batch processing</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Extract specific registry keys/values</li>
+            <li>Batch processing of registry hives</li>
+            <li>Custom regex searches</li>
+            <li>Export to CSV/JSON</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Parse using batch file
 RECmd.exe --bn "C:\Tools\RECmd\BatchExamples\Kroll_Batch.reb" -d "C:\Evidence\Registry" --csv C:\output
 
 # Parse specific key
@@ -1803,77 +1805,77 @@ RECmd.exe -f "NTUSER.DAT" --sr ".*secret.*" --csv C:\output
 # Base64 value search
 RECmd.exe -f "NTUSER.DAT" --base64 --csv C:\output
 </code></pre>
-<p><strong>Useful Batch Files</strong>:</p>
-<ul>
-<li><code>Kroll_Batch.reb</code> - Comprehensive forensic extraction</li>
-<li><code>BasicSystemInfo.reb</code> - System information</li>
-<li><code>UserActivity.reb</code> - User activity artifacts</li>
-</ul>
-<hr />
-<h3>Registry Explorer (GUI)</h3>
-<p><strong>Purpose</strong>: GUI-based registry analysis with advanced features</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Interactive registry browsing</li>
-<li>Deleted key recovery</li>
-<li>Timeline analysis</li>
-<li>Association with bookmarks</li>
-</ul>
-<p><strong>Key Features</strong>:</p>
-<ul>
-<li>Load multiple hives simultaneously</li>
-<li>View deleted keys/values (marked in red)</li>
-<li>Bookmark common forensic keys</li>
-<li>Export to various formats</li>
-<li>Technical details view</li>
-</ul>
-<p><strong>Navigation Shortcuts</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Ctrl+G</code></td>
-<td>Go to key path</td>
-</tr>
-<tr>
-<td><code>Ctrl+F</code></td>
-<td>Find</td>
-</tr>
-<tr>
-<td><code>Ctrl+B</code></td>
-<td>Bookmarks</td>
-</tr>
-<tr>
-<td><code>Ctrl+T</code></td>
-<td>Technical details</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3>Timeline Explorer</h3>
-<p><strong>Purpose</strong>: View and filter CSV output from other tools</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Filter large CSV datasets</li>
-<li>Create timelines from multiple sources</li>
-<li>Quick searching and filtering</li>
-<li>Data visualization</li>
-</ul>
-<p><strong>Key Features</strong>:</p>
-<pre><code>- Open multiple CSVs as tabs
+        <p><strong>Useful Batch Files</strong>:</p>
+        <ul>
+            <li><code>Kroll_Batch.reb</code> - Comprehensive forensic extraction</li>
+            <li><code>BasicSystemInfo.reb</code> - System information</li>
+            <li><code>UserActivity.reb</code> - User activity artifacts</li>
+        </ul>
+        <hr />
+        <h3>Registry Explorer (GUI)</h3>
+        <p><strong>Purpose</strong>: GUI-based registry analysis with advanced features</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Interactive registry browsing</li>
+            <li>Deleted key recovery</li>
+            <li>Timeline analysis</li>
+            <li>Association with bookmarks</li>
+        </ul>
+        <p><strong>Key Features</strong>:</p>
+        <ul>
+            <li>Load multiple hives simultaneously</li>
+            <li>View deleted keys/values (marked in red)</li>
+            <li>Bookmark common forensic keys</li>
+            <li>Export to various formats</li>
+            <li>Technical details view</li>
+        </ul>
+        <p><strong>Navigation Shortcuts</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Shortcut</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>Ctrl+G</code></td>
+                    <td>Go to key path</td>
+                </tr>
+                <tr>
+                    <td><code>Ctrl+F</code></td>
+                    <td>Find</td>
+                </tr>
+                <tr>
+                    <td><code>Ctrl+B</code></td>
+                    <td>Bookmarks</td>
+                </tr>
+                <tr>
+                    <td><code>Ctrl+T</code></td>
+                    <td>Technical details</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <h3>Timeline Explorer</h3>
+        <p><strong>Purpose</strong>: View and filter CSV output from other tools</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Filter large CSV datasets</li>
+            <li>Create timelines from multiple sources</li>
+            <li>Quick searching and filtering</li>
+            <li>Data visualization</li>
+        </ul>
+        <p><strong>Key Features</strong>:</p>
+        <pre><code>- Open multiple CSVs as tabs
 - Filter columns with expressions
 - Group by columns
 - Export filtered results
 - Conditional formatting
 - Column visibility control
 </code></pre>
-<p><strong>Filter Syntax</strong>:</p>
-<pre><code># Contains
+        <p><strong>Filter Syntax</strong>:</p>
+        <pre><code># Contains
 [ColumnName] like '%value%'
 
 # Equals
@@ -1888,18 +1890,18 @@ RECmd.exe -f "NTUSER.DAT" --base64 --csv C:\output
 # Not contains
 NOT [ColumnName] like '%value%'
 </code></pre>
-<hr />
-<h2>KAPE (Kroll Artifact Parser and Extractor)</h2>
-<p><strong>Purpose</strong>: Automated collection and processing of forensic artifacts</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Rapid triage collection</li>
-<li>Batch processing of artifacts</li>
-<li>Consistent evidence collection</li>
-<li>Timeline creation</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Collection only (Targets)
+        <hr />
+        <h2>KAPE (Kroll Artifact Parser and Extractor)</h2>
+        <p><strong>Purpose</strong>: Automated collection and processing of forensic artifacts</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Rapid triage collection</li>
+            <li>Batch processing of artifacts</li>
+            <li>Consistent evidence collection</li>
+            <li>Timeline creation</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Collection only (Targets)
 kape.exe --tsource C: --tdest C:\Collection --target KapeTriage
 
 # Processing only (Modules)
@@ -1920,100 +1922,100 @@ kape.exe --mlist
 # Flush (sync) frequently
 kape.exe --tsource C: --tdest C:\Collection --target KapeTriage --sync
 </code></pre>
-<p><strong>Common Targets</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Target</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>KapeTriage</code></td>
-<td>Comprehensive triage collection</td>
-</tr>
-<tr>
-<td><code>RegistryHives</code></td>
-<td>All registry hives</td>
-</tr>
-<tr>
-<td><code>EventLogs</code></td>
-<td>Windows Event Logs</td>
-</tr>
-<tr>
-<td><code>Prefetch</code></td>
-<td>Prefetch files</td>
-</tr>
-<tr>
-<td><code>$MFT</code></td>
-<td>Master File Table</td>
-</tr>
-<tr>
-<td><code>Amcache</code></td>
-<td>Amcache.hve</td>
-</tr>
-<tr>
-<td><code>SRUM</code></td>
-<td>SRUM database</td>
-</tr>
-<tr>
-<td><code>RecycleBin</code></td>
-<td>Recycle bin contents</td>
-</tr>
-<tr>
-<td><code>BrowserHistory</code></td>
-<td>Browser artifacts</td>
-</tr>
-<tr>
-<td><code>WebBrowsers</code></td>
-<td>All browser data</td>
-</tr>
-<tr>
-<td><code>LnkFilesAndJumpLists</code></td>
-<td>LNK and Jump Lists</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Common Modules</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Module</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>!EZParser</code></td>
-<td>All EZ tools</td>
-</tr>
-<tr>
-<td><code>Chainsaw</code></td>
-<td>Event log hunting</td>
-</tr>
-<tr>
-<td><code>Hayabusa</code></td>
-<td>Event log analysis</td>
-</tr>
-<tr>
-<td><code>RegRipper</code></td>
-<td>Registry parsing</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>RegRipper</h2>
-<p><strong>Purpose</strong>: Registry analysis with pre-built plugins</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Quick extraction of specific artifacts</li>
-<li>Automated registry analysis</li>
-<li>Timeline creation from registry</li>
-<li>Plugin-based customization</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-powershell"># Run all plugins for a hive type
+        <p><strong>Common Targets</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Target</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>KapeTriage</code></td>
+                    <td>Comprehensive triage collection</td>
+                </tr>
+                <tr>
+                    <td><code>RegistryHives</code></td>
+                    <td>All registry hives</td>
+                </tr>
+                <tr>
+                    <td><code>EventLogs</code></td>
+                    <td>Windows Event Logs</td>
+                </tr>
+                <tr>
+                    <td><code>Prefetch</code></td>
+                    <td>Prefetch files</td>
+                </tr>
+                <tr>
+                    <td><code>$MFT</code></td>
+                    <td>Master File Table</td>
+                </tr>
+                <tr>
+                    <td><code>Amcache</code></td>
+                    <td>Amcache.hve</td>
+                </tr>
+                <tr>
+                    <td><code>SRUM</code></td>
+                    <td>SRUM database</td>
+                </tr>
+                <tr>
+                    <td><code>RecycleBin</code></td>
+                    <td>Recycle bin contents</td>
+                </tr>
+                <tr>
+                    <td><code>BrowserHistory</code></td>
+                    <td>Browser artifacts</td>
+                </tr>
+                <tr>
+                    <td><code>WebBrowsers</code></td>
+                    <td>All browser data</td>
+                </tr>
+                <tr>
+                    <td><code>LnkFilesAndJumpLists</code></td>
+                    <td>LNK and Jump Lists</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Common Modules</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>!EZParser</code></td>
+                    <td>All EZ tools</td>
+                </tr>
+                <tr>
+                    <td><code>Chainsaw</code></td>
+                    <td>Event log hunting</td>
+                </tr>
+                <tr>
+                    <td><code>Hayabusa</code></td>
+                    <td>Event log analysis</td>
+                </tr>
+                <tr>
+                    <td><code>RegRipper</code></td>
+                    <td>Registry parsing</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <h2>RegRipper</h2>
+        <p><strong>Purpose</strong>: Registry analysis with pre-built plugins</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Quick extraction of specific artifacts</li>
+            <li>Automated registry analysis</li>
+            <li>Timeline creation from registry</li>
+            <li>Plugin-based customization</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-powershell"># Run all plugins for a hive type
 rip.exe -r NTUSER.DAT -a &gt; ntuser_output.txt
 
 # Run specific plugin
@@ -2034,159 +2036,159 @@ rip.exe -r SECURITY -a &gt; security_output.txt
 rip.exe -r SOFTWARE -a &gt; software_output.txt
 rip.exe -r SYSTEM -a &gt; system_output.txt
 </code></pre>
-<p><strong>Key Plugins by Hive</strong>:</p>
-<p><strong>NTUSER.DAT</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Plugin</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>userassist</code></td>
-<td>GUI program execution</td>
-</tr>
-<tr>
-<td><code>recentdocs</code></td>
-<td>Recently opened documents</td>
-</tr>
-<tr>
-<td><code>typedpaths</code></td>
-<td>Explorer address bar history</td>
-</tr>
-<tr>
-<td><code>typedurls</code></td>
-<td>IE typed URLs</td>
-</tr>
-<tr>
-<td><code>runmru</code></td>
-<td>Run dialog history</td>
-</tr>
-<tr>
-<td><code>comdlg32</code></td>
-<td>Open/Save dialog history</td>
-</tr>
-<tr>
-<td><code>wordwheelquery</code></td>
-<td>Explorer search history</td>
-</tr>
-<tr>
-<td><code>mountpoints2</code></td>
-<td>Mounted devices</td>
-</tr>
-<tr>
-<td><code>shellbags</code></td>
-<td>Folder access history</td>
-</tr>
-</tbody>
-</table>
-<p><strong>SYSTEM</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Plugin</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>shimcache</code></td>
-<td>Application compatibility cache</td>
-</tr>
-<tr>
-<td><code>services</code></td>
-<td>Windows services</td>
-</tr>
-<tr>
-<td><code>compname</code></td>
-<td>Computer name</td>
-</tr>
-<tr>
-<td><code>timezone</code></td>
-<td>System timezone</td>
-</tr>
-<tr>
-<td><code>nic2</code></td>
-<td>Network interfaces</td>
-</tr>
-<tr>
-<td><code>usbstor</code></td>
-<td>USB storage devices</td>
-</tr>
-<tr>
-<td><code>usbdevices</code></td>
-<td>USB devices</td>
-</tr>
-<tr>
-<td><code>bam</code></td>
-<td>Background Activity Moderator</td>
-</tr>
-</tbody>
-</table>
-<p><strong>SOFTWARE</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Plugin</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>profilelist</code></td>
-<td>User profile information</td>
-</tr>
-<tr>
-<td><code>networklist</code></td>
-<td>Network connection history</td>
-</tr>
-<tr>
-<td><code>run</code></td>
-<td>Run key persistence</td>
-</tr>
-<tr>
-<td><code>uninstall</code></td>
-<td>Installed programs</td>
-</tr>
-<tr>
-<td><code>svc</code></td>
-<td>Services configuration</td>
-</tr>
-<tr>
-<td><code>lastloggedon</code></td>
-<td>Last logged on user</td>
-</tr>
-</tbody>
-</table>
-<p><strong>SAM</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Plugin</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>samparse</code></td>
-<td>User account information</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>Chainsaw</h2>
-<p><strong>Purpose</strong>: Fast Windows Event Log hunting using Sigma rules</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Quick threat hunting in event logs</li>
-<li>Sigma rule detection</li>
-<li>Lateral movement detection</li>
-<li>Malware behavior hunting</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-bash"># Hunt with all sigma rules
+        <p><strong>Key Plugins by Hive</strong>:</p>
+        <p><strong>NTUSER.DAT</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plugin</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>userassist</code></td>
+                    <td>GUI program execution</td>
+                </tr>
+                <tr>
+                    <td><code>recentdocs</code></td>
+                    <td>Recently opened documents</td>
+                </tr>
+                <tr>
+                    <td><code>typedpaths</code></td>
+                    <td>Explorer address bar history</td>
+                </tr>
+                <tr>
+                    <td><code>typedurls</code></td>
+                    <td>IE typed URLs</td>
+                </tr>
+                <tr>
+                    <td><code>runmru</code></td>
+                    <td>Run dialog history</td>
+                </tr>
+                <tr>
+                    <td><code>comdlg32</code></td>
+                    <td>Open/Save dialog history</td>
+                </tr>
+                <tr>
+                    <td><code>wordwheelquery</code></td>
+                    <td>Explorer search history</td>
+                </tr>
+                <tr>
+                    <td><code>mountpoints2</code></td>
+                    <td>Mounted devices</td>
+                </tr>
+                <tr>
+                    <td><code>shellbags</code></td>
+                    <td>Folder access history</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>SYSTEM</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plugin</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>shimcache</code></td>
+                    <td>Application compatibility cache</td>
+                </tr>
+                <tr>
+                    <td><code>services</code></td>
+                    <td>Windows services</td>
+                </tr>
+                <tr>
+                    <td><code>compname</code></td>
+                    <td>Computer name</td>
+                </tr>
+                <tr>
+                    <td><code>timezone</code></td>
+                    <td>System timezone</td>
+                </tr>
+                <tr>
+                    <td><code>nic2</code></td>
+                    <td>Network interfaces</td>
+                </tr>
+                <tr>
+                    <td><code>usbstor</code></td>
+                    <td>USB storage devices</td>
+                </tr>
+                <tr>
+                    <td><code>usbdevices</code></td>
+                    <td>USB devices</td>
+                </tr>
+                <tr>
+                    <td><code>bam</code></td>
+                    <td>Background Activity Moderator</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>SOFTWARE</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plugin</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>profilelist</code></td>
+                    <td>User profile information</td>
+                </tr>
+                <tr>
+                    <td><code>networklist</code></td>
+                    <td>Network connection history</td>
+                </tr>
+                <tr>
+                    <td><code>run</code></td>
+                    <td>Run key persistence</td>
+                </tr>
+                <tr>
+                    <td><code>uninstall</code></td>
+                    <td>Installed programs</td>
+                </tr>
+                <tr>
+                    <td><code>svc</code></td>
+                    <td>Services configuration</td>
+                </tr>
+                <tr>
+                    <td><code>lastloggedon</code></td>
+                    <td>Last logged on user</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>SAM</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plugin</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>samparse</code></td>
+                    <td>User account information</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <h2>Chainsaw</h2>
+        <p><strong>Purpose</strong>: Fast Windows Event Log hunting using Sigma rules</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Quick threat hunting in event logs</li>
+            <li>Sigma rule detection</li>
+            <li>Lateral movement detection</li>
+            <li>Malware behavior hunting</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-bash"># Hunt with all sigma rules
 chainsaw hunt C:\Logs\ -s sigma/ --mapping mappings/sigma-event-logs-all.yml
 
 # Hunt specific log file
@@ -2210,8 +2212,8 @@ chainsaw hunt C:\Logs\ -s sigma/ --mapping mappings/sigma-event-logs-all.yml --l
 # Dump all events as JSON
 chainsaw dump C:\Logs\ --json
 </code></pre>
-<p><strong>Sigma Rule Categories</strong>:</p>
-<pre><code>- lateral_movement
+        <p><strong>Sigma Rule Categories</strong>:</p>
+        <pre><code>- lateral_movement
 - credential_access
 - persistence
 - privilege_escalation
@@ -2220,18 +2222,18 @@ chainsaw dump C:\Logs\ --json
 - discovery
 - exfiltration
 </code></pre>
-<hr />
-<h2>Hayabusa</h2>
-<p><strong>Purpose</strong>: Windows Event Log fast forensics timeline generator</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Event log timeline creation</li>
-<li>Sigma-based detection</li>
-<li>CSV/JSON timeline output</li>
-<li>Multi-log correlation</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-bash"># Create CSV timeline
+        <hr />
+        <h2>Hayabusa</h2>
+        <p><strong>Purpose</strong>: Windows Event Log fast forensics timeline generator</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Event log timeline creation</li>
+            <li>Sigma-based detection</li>
+            <li>CSV/JSON timeline output</li>
+            <li>Multi-log correlation</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-bash"># Create CSV timeline
 hayabusa csv-timeline -d C:\Logs\ -o timeline.csv
 
 # Create JSON timeline
@@ -2255,62 +2257,62 @@ hayabusa metrics -d C:\Logs\
 # Computer metrics
 hayabusa computer-metrics -d C:\Logs\
 </code></pre>
-<p><strong>Output Columns</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Column</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Timestamp</td>
-<td>Event timestamp</td>
-</tr>
-<tr>
-<td>Computer</td>
-<td>Computer name</td>
-</tr>
-<tr>
-<td>Channel</td>
-<td>Log channel</td>
-</tr>
-<tr>
-<td>EventID</td>
-<td>Event ID</td>
-</tr>
-<tr>
-<td>Level</td>
-<td>Alert level</td>
-</tr>
-<tr>
-<td>RecordID</td>
-<td>Event record ID</td>
-</tr>
-<tr>
-<td>RuleTitle</td>
-<td>Detection rule name</td>
-</tr>
-<tr>
-<td>Details</td>
-<td>Event details</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>Volatility 3 (Memory Forensics)</h2>
-<p><strong>Purpose</strong>: Memory image analysis</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Process analysis</li>
-<li>Network connections</li>
-<li>Injected code detection</li>
-<li>Credential extraction</li>
-<li>Malware analysis</li>
-</ul>
-<p><strong>Key Commands</strong>:</p>
-<pre><code class="language-bash"># System info
+        <p><strong>Output Columns</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Timestamp</td>
+                    <td>Event timestamp</td>
+                </tr>
+                <tr>
+                    <td>Computer</td>
+                    <td>Computer name</td>
+                </tr>
+                <tr>
+                    <td>Channel</td>
+                    <td>Log channel</td>
+                </tr>
+                <tr>
+                    <td>EventID</td>
+                    <td>Event ID</td>
+                </tr>
+                <tr>
+                    <td>Level</td>
+                    <td>Alert level</td>
+                </tr>
+                <tr>
+                    <td>RecordID</td>
+                    <td>Event record ID</td>
+                </tr>
+                <tr>
+                    <td>RuleTitle</td>
+                    <td>Detection rule name</td>
+                </tr>
+                <tr>
+                    <td>Details</td>
+                    <td>Event details</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <h2>Volatility 3 (Memory Forensics)</h2>
+        <p><strong>Purpose</strong>: Memory image analysis</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Process analysis</li>
+            <li>Network connections</li>
+            <li>Injected code detection</li>
+            <li>Credential extraction</li>
+            <li>Malware analysis</li>
+        </ul>
+        <p><strong>Key Commands</strong>:</p>
+        <pre><code class="language-bash"># System info
 vol -f memory.raw windows.info
 
 # Process listing
@@ -2366,63 +2368,65 @@ vol -f memory.raw windows.dumpfiles --virtaddr 0xADDRESS
 strings -a memory.raw &gt; strings.txt
 strings -el memory.raw &gt;&gt; strings.txt  # Unicode
 </code></pre>
-<p><strong>Plugin Categories</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Plugins</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Process</td>
-<td><code>pslist</code>, <code>pstree</code>, <code>psscan</code>, <code>cmdline</code>, <code>envars</code></td>
-</tr>
-<tr>
-<td>Memory</td>
-<td><code>memmap</code>, <code>vadinfo</code>, <code>vadwalk</code>, <code>malfind</code></td>
-</tr>
-<tr>
-<td>DLLs</td>
-<td><code>dlllist</code>, <code>ldrmodules</code></td>
-</tr>
-<tr>
-<td>Network</td>
-<td><code>netscan</code>, <code>netstat</code></td>
-</tr>
-<tr>
-<td>Registry</td>
-<td><code>hivelist</code>, <code>printkey</code>, <code>hivedump</code></td>
-</tr>
-<tr>
-<td>Files</td>
-<td><code>filescan</code>, <code>dumpfiles</code></td>
-</tr>
-<tr>
-<td>Credentials</td>
-<td><code>hashdump</code>, <code>lsadump</code>, <code>cachedump</code></td>
-</tr>
-<tr>
-<td>Services</td>
-<td><code>svcscan</code>, <code>getservicesids</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>Autopsy / The Sleuth Kit</h2>
-<p><strong>Purpose</strong>: GUI forensic platform and command-line tools</p>
-<p><strong>Autopsy Key Features</strong>:</p>
-<ul>
-<li>Disk image analysis</li>
-<li>Timeline creation</li>
-<li>Keyword searching</li>
-<li>File recovery</li>
-<li>Hash analysis</li>
-<li>Report generation</li>
-</ul>
-<p><strong>Sleuth Kit Commands</strong>:</p>
-<pre><code class="language-bash"># Image information
+        <p><strong>Plugin Categories</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Plugins</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Process</td>
+                    <td><code>pslist</code>, <code>pstree</code>, <code>psscan</code>, <code>cmdline</code>,
+                        <code>envars</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Memory</td>
+                    <td><code>memmap</code>, <code>vadinfo</code>, <code>vadwalk</code>, <code>malfind</code></td>
+                </tr>
+                <tr>
+                    <td>DLLs</td>
+                    <td><code>dlllist</code>, <code>ldrmodules</code></td>
+                </tr>
+                <tr>
+                    <td>Network</td>
+                    <td><code>netscan</code>, <code>netstat</code></td>
+                </tr>
+                <tr>
+                    <td>Registry</td>
+                    <td><code>hivelist</code>, <code>printkey</code>, <code>hivedump</code></td>
+                </tr>
+                <tr>
+                    <td>Files</td>
+                    <td><code>filescan</code>, <code>dumpfiles</code></td>
+                </tr>
+                <tr>
+                    <td>Credentials</td>
+                    <td><code>hashdump</code>, <code>lsadump</code>, <code>cachedump</code></td>
+                </tr>
+                <tr>
+                    <td>Services</td>
+                    <td><code>svcscan</code>, <code>getservicesids</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <h2>Autopsy / The Sleuth Kit</h2>
+        <p><strong>Purpose</strong>: GUI forensic platform and command-line tools</p>
+        <p><strong>Autopsy Key Features</strong>:</p>
+        <ul>
+            <li>Disk image analysis</li>
+            <li>Timeline creation</li>
+            <li>Keyword searching</li>
+            <li>File recovery</li>
+            <li>Hash analysis</li>
+            <li>Report generation</li>
+        </ul>
+        <p><strong>Sleuth Kit Commands</strong>:</p>
+        <pre><code class="language-bash"># Image information
 img_stat image.E01
 
 # File system info
@@ -2453,10 +2457,10 @@ mmls image.E01
 # Hash database lookup (nsrl)
 hfind -i nsrlsha1 nsrl.txt [sha1_hash]
 </code></pre>
-<hr />
-<h2>Additional Essential Tools</h2>
-<h3>Arsenal Image Mounter</h3>
-<pre><code class="language-powershell"># Mount forensic image as disk
+        <hr />
+        <h2>Additional Essential Tools</h2>
+        <h3>Arsenal Image Mounter</h3>
+        <pre><code class="language-powershell"># Mount forensic image as disk
 aim_cli.exe --mount --readonly --filename="image.E01"
 
 # Mount with fake disk signature
@@ -2468,23 +2472,23 @@ aim_cli.exe --list
 # Unmount
 aim_cli.exe --dismount --device=\\.\PhysicalDrive1
 </code></pre>
-<h3>FTK Imager</h3>
-<ul>
-<li>Mount images</li>
-<li>Extract files</li>
-<li>Create forensic images</li>
-<li>View file contents</li>
-<li>Export registry hives</li>
-</ul>
-<h3>Event Log Explorer</h3>
-<ul>
-<li>GUI event log viewer</li>
-<li>Filter and search</li>
-<li>Bookmark events</li>
-<li>Export to various formats</li>
-</ul>
-<h3>NirSoft Tools</h3>
-<pre><code class="language-powershell"># Browser history (multiple browsers)
+        <h3>FTK Imager</h3>
+        <ul>
+            <li>Mount images</li>
+            <li>Extract files</li>
+            <li>Create forensic images</li>
+            <li>View file contents</li>
+            <li>Export registry hives</li>
+        </ul>
+        <h3>Event Log Explorer</h3>
+        <ul>
+            <li>GUI event log viewer</li>
+            <li>Filter and search</li>
+            <li>Bookmark events</li>
+            <li>Export to various formats</li>
+        </ul>
+        <h3>NirSoft Tools</h3>
+        <pre><code class="language-powershell"># Browser history (multiple browsers)
 BrowsingHistoryView.exe /scomma output.csv
 
 # USB device history
@@ -2496,72 +2500,72 @@ LastActivityView.exe /scomma activity.csv
 # Shell bags
 ShellBagsView.exe /scomma shellbags.csv
 </code></pre>
-<h3>Hindsight (Chrome/Edge History)</h3>
-<pre><code class="language-bash"># Parse Chrome profile
+        <h3>Hindsight (Chrome/Edge History)</h3>
+        <pre><code class="language-bash"># Parse Chrome profile
 python hindsight.py -i "C:\Users\user\AppData\Local\Google\Chrome\User Data\Default" -o output
 
 # Specify output format
 python hindsight.py -i "C:\path\Default" -o output -f xlsx
 </code></pre>
-<h3>SQLECmd (Eric Zimmerman)</h3>
-<pre><code class="language-powershell"># Parse SQLite databases with maps
+        <h3>SQLECmd (Eric Zimmerman)</h3>
+        <pre><code class="language-powershell"># Parse SQLite databases with maps
 SQLECmd.exe -f "C:\path\database.sqlite" --maps "C:\Tools\SQLECmd\Maps" --csv C:\output
 
 # Parse all SQLite in directory
 SQLECmd.exe -d "C:\path" --maps "C:\Tools\SQLECmd\Maps" --csv C:\output
 </code></pre>
-<hr />
-<h1>📝 Registry Analysis</h1>
-<h2>Registry Hive Locations and Content</h2>
-<table>
-<thead>
-<tr>
-<th>Hive</th>
-<th>Location</th>
-<th>Content</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>SYSTEM</strong></td>
-<td><code>C:\Windows\System32\config\SYSTEM</code></td>
-<td>Hardware, services, boot config</td>
-</tr>
-<tr>
-<td><strong>SOFTWARE</strong></td>
-<td><code>C:\Windows\System32\config\SOFTWARE</code></td>
-<td>Installed software, OS config</td>
-</tr>
-<tr>
-<td><strong>SAM</strong></td>
-<td><code>C:\Windows\System32\config\SAM</code></td>
-<td>User accounts, password hashes</td>
-</tr>
-<tr>
-<td><strong>SECURITY</strong></td>
-<td><code>C:\Windows\System32\config\SECURITY</code></td>
-<td>Security policies, LSA secrets</td>
-</tr>
-<tr>
-<td><strong>NTUSER.DAT</strong></td>
-<td><code>C:\Users\\NTUSER.DAT</code></td>
-<td>User preferences, activity</td>
-</tr>
-<tr>
-<td><strong>UsrClass.dat</strong></td>
-<td><code>C:\Users\\AppData\Local\Microsoft\Windows\UsrClass.dat</code></td>
-<td>ShellBags, COM settings</td>
-</tr>
-<tr>
-<td><strong>Amcache.hve</strong></td>
-<td><code>C:\Windows\AppCompat\Programs\Amcache.hve</code></td>
-<td>Program execution, SHA1 hashes</td>
-</tr>
-</tbody>
-</table>
-<h2>High-Value Registry Keys</h2>
-<h3>Persistence Mechanisms</h3>
-<pre><code># Run Keys (per user)
+        <hr />
+        <h1>📝 Registry Analysis</h1>
+        <h2>Registry Hive Locations and Content</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Hive</th>
+                    <th>Location</th>
+                    <th>Content</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>SYSTEM</strong></td>
+                    <td><code>C:\Windows\System32\config\SYSTEM</code></td>
+                    <td>Hardware, services, boot config</td>
+                </tr>
+                <tr>
+                    <td><strong>SOFTWARE</strong></td>
+                    <td><code>C:\Windows\System32\config\SOFTWARE</code></td>
+                    <td>Installed software, OS config</td>
+                </tr>
+                <tr>
+                    <td><strong>SAM</strong></td>
+                    <td><code>C:\Windows\System32\config\SAM</code></td>
+                    <td>User accounts, password hashes</td>
+                </tr>
+                <tr>
+                    <td><strong>SECURITY</strong></td>
+                    <td><code>C:\Windows\System32\config\SECURITY</code></td>
+                    <td>Security policies, LSA secrets</td>
+                </tr>
+                <tr>
+                    <td><strong>NTUSER.DAT</strong></td>
+                    <td><code>C:\Users\\NTUSER.DAT</code></td>
+                    <td>User preferences, activity</td>
+                </tr>
+                <tr>
+                    <td><strong>UsrClass.dat</strong></td>
+                    <td><code>C:\Users\\AppData\Local\Microsoft\Windows\UsrClass.dat</code></td>
+                    <td>ShellBags, COM settings</td>
+                </tr>
+                <tr>
+                    <td><strong>Amcache.hve</strong></td>
+                    <td><code>C:\Windows\AppCompat\Programs\Amcache.hve</code></td>
+                    <td>Program execution, SHA1 hashes</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>High-Value Registry Keys</h2>
+        <h3>Persistence Mechanisms</h3>
+        <pre><code># Run Keys (per user)
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Run
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\RunOnce
 
@@ -2601,8 +2605,8 @@ SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects
 # Boot Execute
 SYSTEM\CurrentControlSet\Control\Session Manager\BootExecute
 </code></pre>
-<h3>Program Execution Evidence</h3>
-<pre><code># UserAssist (GUI programs - ROT13 encoded)
+        <h3>Program Execution Evidence</h3>
+        <pre><code># UserAssist (GUI programs - ROT13 encoded)
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count
 
 # ShimCache / AppCompatCache
@@ -2615,8 +2619,8 @@ SYSTEM\CurrentControlSet\Services\dam\State\UserSettings\{SID}
 # MUI Cache (executable descriptions)
 NTUSER.DAT\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache
 </code></pre>
-<h3>User Activity</h3>
-<pre><code># Recent Documents
+        <h3>User Activity</h3>
+        <pre><code># Recent Documents
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
 
 # Typed Paths (Explorer address bar)
@@ -2635,8 +2639,8 @@ NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery
 # Last Commands
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
 </code></pre>
-<h3>USB/Removable Devices</h3>
-<pre><code># USB Storage Devices
+        <h3>USB/Removable Devices</h3>
+        <pre><code># USB Storage Devices
 SYSTEM\CurrentControlSet\Enum\USBSTOR
 SYSTEM\CurrentControlSet\Enum\USB
 
@@ -2655,8 +2659,8 @@ SYSTEM\CurrentControlSet\Enum\USBSTOR\{Device}\{Instance}
 - LastArrivalDate
 - LastRemovalDate (Win10+)
 </code></pre>
-<h3>Network Configuration</h3>
-<pre><code># Network Interfaces
+        <h3>Network Configuration</h3>
+        <pre><code># Network Interfaces
 SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{GUID}
 
 # Network List (profiles)
@@ -2666,8 +2670,8 @@ SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\
 # Shares
 SYSTEM\CurrentControlSet\Services\LanmanServer\Shares
 </code></pre>
-<h3>System Information</h3>
-<pre><code># Computer Name
+        <h3>System Information</h3>
+        <pre><code># Computer Name
 SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName
 
 # Timezone
@@ -2682,10 +2686,10 @@ SOFTWARE\Microsoft\Windows NT\CurrentVersion
 # Profile List (Users)
 SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
 </code></pre>
-<hr />
-<h1>📊 Event Log Analysis</h1>
-<h2>Key Event Log Locations</h2>
-<pre><code>📁 All Event Logs: C:\Windows\System32\winevt\Logs\
+        <hr />
+        <h1>📊 Event Log Analysis</h1>
+        <h2>Key Event Log Locations</h2>
+        <pre><code>📁 All Event Logs: C:\Windows\System32\winevt\Logs\
 
 Primary Logs:
 - Security.evtx
@@ -2712,297 +2716,305 @@ Sysmon (if installed):
 Bits:
 - Microsoft-Windows-Bits-Client%4Operational.evtx
 </code></pre>
-<h2>Event Log Analysis by Investigation Type</h2>
-<h3>Authentication Analysis</h3>
-<table>
-<thead>
-<tr>
-<th>Event ID</th>
-<th>Log</th>
-<th>Meaning</th>
-<th>Key Fields</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4624</td>
-<td>Security</td>
-<td>Successful Logon</td>
-<td><code>LogonType</code>, <code>TargetUserName</code>, <code>IpAddress</code>, <code>WorkstationName</code></td>
-</tr>
-<tr>
-<td>4625</td>
-<td>Security</td>
-<td>Failed Logon</td>
-<td><code>LogonType</code>, <code>TargetUserName</code>, <code>IpAddress</code>, <code>FailureReason</code></td>
-</tr>
-<tr>
-<td>4634/4647</td>
-<td>Security</td>
-<td>Logoff</td>
-<td><code>TargetUserName</code>, <code>LogonType</code></td>
-</tr>
-<tr>
-<td>4648</td>
-<td>Security</td>
-<td>Explicit Credentials</td>
-<td><code>SubjectUserName</code>, <code>TargetUserName</code>, <code>TargetServerName</code></td>
-</tr>
-<tr>
-<td>4672</td>
-<td>Security</td>
-<td>Special Privileges</td>
-<td><code>SubjectUserName</code>, <code>PrivilegeList</code></td>
-</tr>
-<tr>
-<td>4776</td>
-<td>Security</td>
-<td>NTLM Auth</td>
-<td><code>TargetUserName</code>, <code>Workstation</code></td>
-</tr>
-<tr>
-<td>4768</td>
-<td>Security</td>
-<td>Kerberos TGT Request</td>
-<td><code>TargetUserName</code>, <code>IpAddress</code></td>
-</tr>
-<tr>
-<td>4769</td>
-<td>Security</td>
-<td>Kerberos Service Ticket</td>
-<td><code>TargetUserName</code>, <code>ServiceName</code></td>
-</tr>
-</tbody>
-</table>
-<h3>Process Execution</h3>
-<table>
-<thead>
-<tr>
-<th>Event ID</th>
-<th>Log</th>
-<th>Meaning</th>
-<th>Key Fields</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4688</td>
-<td>Security</td>
-<td>Process Creation</td>
-<td><code>NewProcessName</code>, <code>CommandLine</code>, <code>ParentProcessName</code>, <code>SubjectUserName</code></td>
-</tr>
-<tr>
-<td>4689</td>
-<td>Security</td>
-<td>Process Termination</td>
-<td><code>ProcessName</code>, <code>SubjectUserName</code></td>
-</tr>
-<tr>
-<td>1</td>
-<td>Sysmon</td>
-<td>Process Create</td>
-<td><code>Image</code>, <code>CommandLine</code>, <code>ParentImage</code>, <code>User</code>, <code>Hashes</code></td>
-</tr>
-<tr>
-<td>5</td>
-<td>Sysmon</td>
-<td>Process Terminated</td>
-<td><code>Image</code>, <code>User</code></td>
-</tr>
-</tbody>
-</table>
-<h3>Lateral Movement Indicators</h3>
-<table>
-<thead>
-<tr>
-<th>Event ID</th>
-<th>Log</th>
-<th>Meaning</th>
-<th>Key Fields</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4624 (Type 3)</td>
-<td>Security</td>
-<td>Network Logon</td>
-<td><code>IpAddress</code>, <code>TargetUserName</code></td>
-</tr>
-<tr>
-<td>4624 (Type 10)</td>
-<td>Security</td>
-<td>RDP Logon</td>
-<td><code>IpAddress</code>, <code>TargetUserName</code></td>
-</tr>
-<tr>
-<td>4648</td>
-<td>Security</td>
-<td>Explicit Creds</td>
-<td><code>TargetServerName</code>, <code>TargetUserName</code></td>
-</tr>
-<tr>
-<td>21</td>
-<td>TS-Local</td>
-<td>RDP Session Logon</td>
-<td><code>User</code>, <code>Source Network Address</code></td>
-</tr>
-<tr>
-<td>22</td>
-<td>TS-Local</td>
-<td>Shell Start</td>
-<td><code>User</code></td>
-</tr>
-<tr>
-<td>25</td>
-<td>TS-Local</td>
-<td>Reconnect</td>
-<td><code>User</code>, <code>Source Network Address</code></td>
-</tr>
-<tr>
-<td>1149</td>
-<td>TS-Remote</td>
-<td>RDP Auth Success</td>
-<td><code>User</code>, <code>Source Network Address</code></td>
-</tr>
-</tbody>
-</table>
-<h3>Persistence</h3>
-<table>
-<thead>
-<tr>
-<th>Event ID</th>
-<th>Log</th>
-<th>Meaning</th>
-<th>Key Fields</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>7045</td>
-<td>System</td>
-<td>Service Install</td>
-<td><code>ServiceName</code>, <code>ImagePath</code>, <code>ServiceType</code></td>
-</tr>
-<tr>
-<td>7040</td>
-<td>System</td>
-<td>Service Start Type Changed</td>
-<td><code>ServiceName</code>, <code>StartType</code></td>
-</tr>
-<tr>
-<td>4698</td>
-<td>Security</td>
-<td>Scheduled Task Created</td>
-<td><code>TaskName</code>, <code>TaskContent</code></td>
-</tr>
-<tr>
-<td>4699</td>
-<td>Security</td>
-<td>Scheduled Task Deleted</td>
-<td><code>TaskName</code></td>
-</tr>
-<tr>
-<td>4702</td>
-<td>Security</td>
-<td>Scheduled Task Updated</td>
-<td><code>TaskName</code>, <code>TaskContent</code></td>
-</tr>
-<tr>
-<td>106</td>
-<td>TaskScheduler</td>
-<td>Task Registered</td>
-<td><code>TaskName</code></td>
-</tr>
-<tr>
-<td>200/201</td>
-<td>TaskScheduler</td>
-<td>Task Executed/Completed</td>
-<td><code>TaskName</code>, <code>ActionName</code></td>
-</tr>
-<tr>
-<td>13</td>
-<td>Sysmon</td>
-<td>Registry Value Set</td>
-<td><code>TargetObject</code>, <code>Details</code></td>
-</tr>
-</tbody>
-</table>
-<h3>PowerShell Activity</h3>
-<table>
-<thead>
-<tr>
-<th>Event ID</th>
-<th>Log</th>
-<th>Meaning</th>
-<th>Key Fields</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4103</td>
-<td>PowerShell Operational</td>
-<td>Module Logging</td>
-<td><code>Payload</code></td>
-</tr>
-<tr>
-<td>4104</td>
-<td>PowerShell Operational</td>
-<td>Script Block Logging</td>
-<td><code>ScriptBlockText</code></td>
-</tr>
-<tr>
-<td>400</td>
-<td>Windows PowerShell</td>
-<td>Engine Start</td>
-<td><code>HostApplication</code></td>
-</tr>
-<tr>
-<td>403</td>
-<td>Windows PowerShell</td>
-<td>Engine Stop</td>
-<td><code>HostApplication</code></td>
-</tr>
-<tr>
-<td>800</td>
-<td>Windows PowerShell</td>
-<td>Pipeline Execution</td>
-<td>Details</td>
-</tr>
-</tbody>
-</table>
-<h3>Anti-Forensics Detection</h3>
-<table>
-<thead>
-<tr>
-<th>Event ID</th>
-<th>Log</th>
-<th>Meaning</th>
-<th>Implication</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1102</td>
-<td>Security</td>
-<td>Audit Log Cleared</td>
-<td>Evidence destruction</td>
-</tr>
-<tr>
-<td>104</td>
-<td>System</td>
-<td>Log Cleared</td>
-<td>Evidence destruction</td>
-</tr>
-<tr>
-<td>1100</td>
-<td>Security</td>
-<td>Event Logging Shutdown</td>
-<td>Logging stopped</td>
-</tr>
-</tbody>
-</table>
-<h2>Event Log Quick Analysis Commands</h2>
-<pre><code class="language-powershell"># PowerShell - Quick Event Log Analysis
+        <h2>Event Log Analysis by Investigation Type</h2>
+        <h3>Authentication Analysis</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Key Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>4624</td>
+                    <td>Security</td>
+                    <td>Successful Logon</td>
+                    <td><code>LogonType</code>, <code>TargetUserName</code>, <code>IpAddress</code>,
+                        <code>WorkstationName</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4625</td>
+                    <td>Security</td>
+                    <td>Failed Logon</td>
+                    <td><code>LogonType</code>, <code>TargetUserName</code>, <code>IpAddress</code>,
+                        <code>FailureReason</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4634/4647</td>
+                    <td>Security</td>
+                    <td>Logoff</td>
+                    <td><code>TargetUserName</code>, <code>LogonType</code></td>
+                </tr>
+                <tr>
+                    <td>4648</td>
+                    <td>Security</td>
+                    <td>Explicit Credentials</td>
+                    <td><code>SubjectUserName</code>, <code>TargetUserName</code>, <code>TargetServerName</code></td>
+                </tr>
+                <tr>
+                    <td>4672</td>
+                    <td>Security</td>
+                    <td>Special Privileges</td>
+                    <td><code>SubjectUserName</code>, <code>PrivilegeList</code></td>
+                </tr>
+                <tr>
+                    <td>4776</td>
+                    <td>Security</td>
+                    <td>NTLM Auth</td>
+                    <td><code>TargetUserName</code>, <code>Workstation</code></td>
+                </tr>
+                <tr>
+                    <td>4768</td>
+                    <td>Security</td>
+                    <td>Kerberos TGT Request</td>
+                    <td><code>TargetUserName</code>, <code>IpAddress</code></td>
+                </tr>
+                <tr>
+                    <td>4769</td>
+                    <td>Security</td>
+                    <td>Kerberos Service Ticket</td>
+                    <td><code>TargetUserName</code>, <code>ServiceName</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Process Execution</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Key Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>4688</td>
+                    <td>Security</td>
+                    <td>Process Creation</td>
+                    <td><code>NewProcessName</code>, <code>CommandLine</code>, <code>ParentProcessName</code>,
+                        <code>SubjectUserName</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4689</td>
+                    <td>Security</td>
+                    <td>Process Termination</td>
+                    <td><code>ProcessName</code>, <code>SubjectUserName</code></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Sysmon</td>
+                    <td>Process Create</td>
+                    <td><code>Image</code>, <code>CommandLine</code>, <code>ParentImage</code>, <code>User</code>,
+                        <code>Hashes</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Sysmon</td>
+                    <td>Process Terminated</td>
+                    <td><code>Image</code>, <code>User</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Lateral Movement Indicators</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Key Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>4624 (Type 3)</td>
+                    <td>Security</td>
+                    <td>Network Logon</td>
+                    <td><code>IpAddress</code>, <code>TargetUserName</code></td>
+                </tr>
+                <tr>
+                    <td>4624 (Type 10)</td>
+                    <td>Security</td>
+                    <td>RDP Logon</td>
+                    <td><code>IpAddress</code>, <code>TargetUserName</code></td>
+                </tr>
+                <tr>
+                    <td>4648</td>
+                    <td>Security</td>
+                    <td>Explicit Creds</td>
+                    <td><code>TargetServerName</code>, <code>TargetUserName</code></td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>TS-Local</td>
+                    <td>RDP Session Logon</td>
+                    <td><code>User</code>, <code>Source Network Address</code></td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>TS-Local</td>
+                    <td>Shell Start</td>
+                    <td><code>User</code></td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>TS-Local</td>
+                    <td>Reconnect</td>
+                    <td><code>User</code>, <code>Source Network Address</code></td>
+                </tr>
+                <tr>
+                    <td>1149</td>
+                    <td>TS-Remote</td>
+                    <td>RDP Auth Success</td>
+                    <td><code>User</code>, <code>Source Network Address</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Persistence</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Key Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>7045</td>
+                    <td>System</td>
+                    <td>Service Install</td>
+                    <td><code>ServiceName</code>, <code>ImagePath</code>, <code>ServiceType</code></td>
+                </tr>
+                <tr>
+                    <td>7040</td>
+                    <td>System</td>
+                    <td>Service Start Type Changed</td>
+                    <td><code>ServiceName</code>, <code>StartType</code></td>
+                </tr>
+                <tr>
+                    <td>4698</td>
+                    <td>Security</td>
+                    <td>Scheduled Task Created</td>
+                    <td><code>TaskName</code>, <code>TaskContent</code></td>
+                </tr>
+                <tr>
+                    <td>4699</td>
+                    <td>Security</td>
+                    <td>Scheduled Task Deleted</td>
+                    <td><code>TaskName</code></td>
+                </tr>
+                <tr>
+                    <td>4702</td>
+                    <td>Security</td>
+                    <td>Scheduled Task Updated</td>
+                    <td><code>TaskName</code>, <code>TaskContent</code></td>
+                </tr>
+                <tr>
+                    <td>106</td>
+                    <td>TaskScheduler</td>
+                    <td>Task Registered</td>
+                    <td><code>TaskName</code></td>
+                </tr>
+                <tr>
+                    <td>200/201</td>
+                    <td>TaskScheduler</td>
+                    <td>Task Executed/Completed</td>
+                    <td><code>TaskName</code>, <code>ActionName</code></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Sysmon</td>
+                    <td>Registry Value Set</td>
+                    <td><code>TargetObject</code>, <code>Details</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>PowerShell Activity</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Key Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>4103</td>
+                    <td>PowerShell Operational</td>
+                    <td>Module Logging</td>
+                    <td><code>Payload</code></td>
+                </tr>
+                <tr>
+                    <td>4104</td>
+                    <td>PowerShell Operational</td>
+                    <td>Script Block Logging</td>
+                    <td><code>ScriptBlockText</code></td>
+                </tr>
+                <tr>
+                    <td>400</td>
+                    <td>Windows PowerShell</td>
+                    <td>Engine Start</td>
+                    <td><code>HostApplication</code></td>
+                </tr>
+                <tr>
+                    <td>403</td>
+                    <td>Windows PowerShell</td>
+                    <td>Engine Stop</td>
+                    <td><code>HostApplication</code></td>
+                </tr>
+                <tr>
+                    <td>800</td>
+                    <td>Windows PowerShell</td>
+                    <td>Pipeline Execution</td>
+                    <td>Details</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Anti-Forensics Detection</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Implication</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1102</td>
+                    <td>Security</td>
+                    <td>Audit Log Cleared</td>
+                    <td>Evidence destruction</td>
+                </tr>
+                <tr>
+                    <td>104</td>
+                    <td>System</td>
+                    <td>Log Cleared</td>
+                    <td>Evidence destruction</td>
+                </tr>
+                <tr>
+                    <td>1100</td>
+                    <td>Security</td>
+                    <td>Event Logging Shutdown</td>
+                    <td>Logging stopped</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Event Log Quick Analysis Commands</h2>
+        <pre><code class="language-powershell"># PowerShell - Quick Event Log Analysis
 
 # Get recent security events
 Get-WinEvent -LogName Security -MaxEvents 100 | 
@@ -3029,88 +3041,88 @@ Get-WinEvent -FilterHashtable @{
     Id=4624,4625,4648,4672
 } | Select-Object TimeCreated, Id, Message
 </code></pre>
-<hr />
-<h1>💾 File System Artifacts</h1>
-<h2>NTFS Artifacts</h2>
-<h3>Master File Table ($MFT)</h3>
-<p><strong>Location</strong>: <code>C:\$MFT</code> (root of NTFS volume)</p>
-<p><strong>Content</strong>:</p>
-<ul>
-<li>File/folder metadata</li>
-<li>All timestamps (MACB)</li>
-<li>File paths (via parent reference)</li>
-<li>File sizes</li>
-<li>Resident data (small files)</li>
-</ul>
-<p><strong>Key Attributes</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>$STANDARD_INFORMATION</code></td>
-<td>Timestamps (modifiable)</td>
-</tr>
-<tr>
-<td><code>$FILE_NAME</code></td>
-<td>Timestamps (harder to modify), file name</td>
-</tr>
-<tr>
-<td><code>$DATA</code></td>
-<td>File content (or pointer to clusters)</td>
-</tr>
-<tr>
-<td><code>$INDEX_ROOT</code></td>
-<td>Directory index</td>
-</tr>
-<tr>
-<td><code>$INDEX_ALLOCATION</code></td>
-<td>Large directory index</td>
-</tr>
-<tr>
-<td><code>$BITMAP</code></td>
-<td>Cluster allocation map</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Timestamps</strong> (MACB):</p>
-<ul>
-<li><strong>M</strong>odified: Content changed</li>
-<li><strong>A</strong>ccessed: Content read</li>
-<li><strong>C</strong>hanged: MFT entry modified (permissions, name, etc.)</li>
-<li><strong>B</strong>orn: Created</li>
-</ul>
-<h3>USN Journal (<span class="language-math">UsnJrnl:</span>J)</h3>
-<p><strong>Location</strong>: <code>C:\$Extend\$UsnJrnl:$J</code></p>
-<p><strong>Content</strong>:</p>
-<ul>
-<li>Real-time file system change log</li>
-<li>File creation, deletion, modification</li>
-<li>Rename operations</li>
-<li>Permission changes</li>
-</ul>
-<p><strong>Use Cases</strong>:</p>
-<ul>
-<li>Track file system changes</li>
-<li>Identify deleted files</li>
-<li>Malware activity timeline</li>
-<li>Data exfiltration indicators</li>
-</ul>
-<h3>$LogFile</h3>
-<p><strong>Location</strong>: <code>C:\$LogFile</code></p>
-<p><strong>Content</strong>:</p>
-<ul>
-<li>NTFS transaction log</li>
-<li>File system operations for crash recovery</li>
-<li>Short-term history (overwritten quickly)</li>
-</ul>
-<h3>Alternate Data Streams (ADS)</h3>
-<p><strong>Detection</strong>:</p>
-<pre><code class="language-powershell"># Find ADS
+        <hr />
+        <h1>💾 File System Artifacts</h1>
+        <h2>NTFS Artifacts</h2>
+        <h3>Master File Table ($MFT)</h3>
+        <p><strong>Location</strong>: <code>C:\$MFT</code> (root of NTFS volume)</p>
+        <p><strong>Content</strong>:</p>
+        <ul>
+            <li>File/folder metadata</li>
+            <li>All timestamps (MACB)</li>
+            <li>File paths (via parent reference)</li>
+            <li>File sizes</li>
+            <li>Resident data (small files)</li>
+        </ul>
+        <p><strong>Key Attributes</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>$STANDARD_INFORMATION</code></td>
+                    <td>Timestamps (modifiable)</td>
+                </tr>
+                <tr>
+                    <td><code>$FILE_NAME</code></td>
+                    <td>Timestamps (harder to modify), file name</td>
+                </tr>
+                <tr>
+                    <td><code>$DATA</code></td>
+                    <td>File content (or pointer to clusters)</td>
+                </tr>
+                <tr>
+                    <td><code>$INDEX_ROOT</code></td>
+                    <td>Directory index</td>
+                </tr>
+                <tr>
+                    <td><code>$INDEX_ALLOCATION</code></td>
+                    <td>Large directory index</td>
+                </tr>
+                <tr>
+                    <td><code>$BITMAP</code></td>
+                    <td>Cluster allocation map</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Timestamps</strong> (MACB):</p>
+        <ul>
+            <li><strong>M</strong>odified: Content changed</li>
+            <li><strong>A</strong>ccessed: Content read</li>
+            <li><strong>C</strong>hanged: MFT entry modified (permissions, name, etc.)</li>
+            <li><strong>B</strong>orn: Created</li>
+        </ul>
+        <h3>USN Journal (<span class="language-math">UsnJrnl:</span>J)</h3>
+        <p><strong>Location</strong>: <code>C:\$Extend\$UsnJrnl:$J</code></p>
+        <p><strong>Content</strong>:</p>
+        <ul>
+            <li>Real-time file system change log</li>
+            <li>File creation, deletion, modification</li>
+            <li>Rename operations</li>
+            <li>Permission changes</li>
+        </ul>
+        <p><strong>Use Cases</strong>:</p>
+        <ul>
+            <li>Track file system changes</li>
+            <li>Identify deleted files</li>
+            <li>Malware activity timeline</li>
+            <li>Data exfiltration indicators</li>
+        </ul>
+        <h3>$LogFile</h3>
+        <p><strong>Location</strong>: <code>C:\$LogFile</code></p>
+        <p><strong>Content</strong>:</p>
+        <ul>
+            <li>NTFS transaction log</li>
+            <li>File system operations for crash recovery</li>
+            <li>Short-term history (overwritten quickly)</li>
+        </ul>
+        <h3>Alternate Data Streams (ADS)</h3>
+        <p><strong>Detection</strong>:</p>
+        <pre><code class="language-powershell"># Find ADS
 dir /R C:\path\
 Get-Item -Path C:\path\file.txt -Stream *
 
@@ -3118,215 +3130,221 @@ Get-Item -Path C:\path\file.txt -Stream *
 Get-Content -Path C:\path\file.txt -Stream "HiddenStream"
 more &lt; C:\path\file.txt:HiddenStream
 </code></pre>
-<p><strong>Common Zone.Identifier ADS</strong>:</p>
-<pre><code>[ZoneTransfer]
+        <p><strong>Common Zone.Identifier ADS</strong>:</p>
+        <pre><code>[ZoneTransfer]
 ZoneId=3  # Internet
 HostUrl=https://example.com/file.exe
 </code></pre>
-<p><strong>Zone IDs</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>ZoneId</th>
-<th>Source</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>Local machine</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Local intranet</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Trusted sites</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Internet</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Restricted sites</td>
-</tr>
-</tbody>
-</table>
-<h2>Recycle Bin</h2>
-<p><strong>Location</strong>: <code>C:\$Recycle.Bin\{SID}\</code></p>
-<p><strong>Files</strong>:</p>
-<ul>
-<li><code>$I&lt;id&gt;</code> - Metadata (original path, deletion time)</li>
-<li><code>$R&lt;id&gt;</code> - Actual file content</li>
-</ul>
-<p><strong>Analysis</strong>:</p>
-<pre><code class="language-powershell"># Using RBCmd (Eric Zimmerman)
+        <p><strong>Zone IDs</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ZoneId</th>
+                    <th>Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>Local machine</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Local intranet</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Trusted sites</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Internet</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Restricted sites</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Recycle Bin</h2>
+        <p><strong>Location</strong>: <code>C:\$Recycle.Bin\{SID}\</code></p>
+        <p><strong>Files</strong>:</p>
+        <ul>
+            <li><code>$I&lt;id&gt;</code> - Metadata (original path, deletion time)</li>
+            <li><code>$R&lt;id&gt;</code> - Actual file content</li>
+        </ul>
+        <p><strong>Analysis</strong>:</p>
+        <pre><code class="language-powershell"># Using RBCmd (Eric Zimmerman)
 RBCmd.exe -d "C:\$Recycle.Bin" --csv C:\output --csvf recyclebin.csv
 </code></pre>
-<p><strong>Key Fields</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>FileName</code></td>
-<td>Original file name</td>
-</tr>
-<tr>
-<td><code>FileSize</code></td>
-<td>File size</td>
-</tr>
-<tr>
-<td><code>DeletedOn</code></td>
-<td>Deletion timestamp</td>
-</tr>
-<tr>
-<td><code>SourceFile</code></td>
-<td>$I file path (contains SID)</td>
-</tr>
-</tbody>
-</table>
-<h2>Volume Shadow Copies</h2>
-<p><strong>List VSS</strong>:</p>
-<pre><code class="language-powershell"># List shadow copies
+        <p><strong>Key Fields</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>FileName</code></td>
+                    <td>Original file name</td>
+                </tr>
+                <tr>
+                    <td><code>FileSize</code></td>
+                    <td>File size</td>
+                </tr>
+                <tr>
+                    <td><code>DeletedOn</code></td>
+                    <td>Deletion timestamp</td>
+                </tr>
+                <tr>
+                    <td><code>SourceFile</code></td>
+                    <td>$I file path (contains SID)</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Volume Shadow Copies</h2>
+        <p><strong>List VSS</strong>:</p>
+        <pre><code class="language-powershell"># List shadow copies
 vssadmin list shadows
 
 # WMI method
 Get-WmiObject Win32_ShadowCopy | Select-Object DeviceObject, InstallDate
 </code></pre>
-<p><strong>Access VSS</strong>:</p>
-<pre><code class="language-cmd">:: Create symbolic link to VSS
+        <p><strong>Access VSS</strong>:</p>
+        <pre><code class="language-cmd">:: Create symbolic link to VSS
 mklink /d C:\VSS_Mount \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\
 
 :: Navigate
 cd C:\VSS_Mount
 </code></pre>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Recover deleted files</li>
-<li>Find previous versions of modified files</li>
-<li>Access files that were later encrypted</li>
-<li>Timeline of file changes</li>
-</ul>
-<h2>Thumbnail Cache</h2>
-<p><strong>Location</strong>: <code>C:\Users\&lt;user&gt;\AppData\Local\Microsoft\Windows\Explorer\</code></p>
-<p><strong>Files</strong>:</p>
-<ul>
-<li><code>thumbcache_*.db</code></li>
-<li><code>iconcache_*.db</code></li>
-</ul>
-<p><strong>Tool</strong>: Thumbcache Viewer</p>
-<p><strong>CTF Use Cases</strong>:</p>
-<ul>
-<li>Evidence of viewed images</li>
-<li>Recover deleted image thumbnails</li>
-<li>Prove file existence even after deletion</li>
-</ul>
-<hr />
-<h1>👤 User Activity Analysis</h1>
-<h2>UserAssist</h2>
-<p><strong>Location</strong>: <code>NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count</code></p>
-<p><strong>GUIDs</strong>:</p>
-<ul>
-<li><code>{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}</code> - Executable files</li>
-<li><code>{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}</code> - Shortcuts</li>
-</ul>
-<p><strong>Encoding</strong>: ROT13</p>
-<p><strong>Content</strong>:</p>
-<ul>
-<li>Program execution count</li>
-<li>Last execution time</li>
-<li>Focus time</li>
-<li>Focus count</li>
-</ul>
-<p><strong>Decoding</strong>:</p>
-<pre><code class="language-python">import codecs
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Recover deleted files</li>
+            <li>Find previous versions of modified files</li>
+            <li>Access files that were later encrypted</li>
+            <li>Timeline of file changes</li>
+        </ul>
+        <h2>Thumbnail Cache</h2>
+        <p><strong>Location</strong>: <code>C:\Users\&lt;user&gt;\AppData\Local\Microsoft\Windows\Explorer\</code></p>
+        <p><strong>Files</strong>:</p>
+        <ul>
+            <li><code>thumbcache_*.db</code></li>
+            <li><code>iconcache_*.db</code></li>
+        </ul>
+        <p><strong>Tool</strong>: Thumbcache Viewer</p>
+        <p><strong>CTF Use Cases</strong>:</p>
+        <ul>
+            <li>Evidence of viewed images</li>
+            <li>Recover deleted image thumbnails</li>
+            <li>Prove file existence even after deletion</li>
+        </ul>
+        <hr />
+        <h1>👤 User Activity Analysis</h1>
+        <h2>UserAssist</h2>
+        <p><strong>Location</strong>:
+            <code>NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count</code>
+        </p>
+        <p><strong>GUIDs</strong>:</p>
+        <ul>
+            <li><code>{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}</code> - Executable files</li>
+            <li><code>{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}</code> - Shortcuts</li>
+        </ul>
+        <p><strong>Encoding</strong>: ROT13</p>
+        <p><strong>Content</strong>:</p>
+        <ul>
+            <li>Program execution count</li>
+            <li>Last execution time</li>
+            <li>Focus time</li>
+            <li>Focus count</li>
+        </ul>
+        <p><strong>Decoding</strong>:</p>
+        <pre><code class="language-python">import codecs
 encoded = "zvpebfbsg.rkr"
 decoded = codecs.decode(encoded, 'rot_13')
 print(decoded)  # microsoft.exe
 </code></pre>
-<h2>Recent Files &amp; Folders</h2>
-<h3>Recent Documents</h3>
-<p><strong>Location</strong>: <code>NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs</code></p>
-<p><strong>Subkeys by Extension</strong>:</p>
-<ul>
-<li><code>.pdf</code>, <code>.docx</code>, <code>.xlsx</code>, etc.</li>
-<li>Folder</li>
-<li>MRU list</li>
-</ul>
-<h3>LNK Files</h3>
-<p><strong>Location</strong>: <code>C:\Users\&lt;user&gt;\AppData\Roaming\Microsoft\Windows\Recent\</code></p>
-<p><strong>Content</strong>:</p>
-<ul>
-<li>Target file path</li>
-<li>Target timestamps</li>
-<li>Volume information</li>
-<li>Machine ID (NetBIOS name)</li>
-</ul>
-<h3>Jump Lists</h3>
-<p><strong>Locations</strong>:</p>
-<pre><code>Automatic: C:\Users\&lt;user&gt;\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations\
+        <h2>Recent Files &amp; Folders</h2>
+        <h3>Recent Documents</h3>
+        <p><strong>Location</strong>:
+            <code>NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs</code>
+        </p>
+        <p><strong>Subkeys by Extension</strong>:</p>
+        <ul>
+            <li><code>.pdf</code>, <code>.docx</code>, <code>.xlsx</code>, etc.</li>
+            <li>Folder</li>
+            <li>MRU list</li>
+        </ul>
+        <h3>LNK Files</h3>
+        <p><strong>Location</strong>: <code>C:\Users\&lt;user&gt;\AppData\Roaming\Microsoft\Windows\Recent\</code></p>
+        <p><strong>Content</strong>:</p>
+        <ul>
+            <li>Target file path</li>
+            <li>Target timestamps</li>
+            <li>Volume information</li>
+            <li>Machine ID (NetBIOS name)</li>
+        </ul>
+        <h3>Jump Lists</h3>
+        <p><strong>Locations</strong>:</p>
+        <pre><code>Automatic: C:\Users\&lt;user&gt;\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations\
 Custom: C:\Users\&lt;user&gt;\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations\
 </code></pre>
-<h3>ShellBags</h3>
-<p><strong>Locations</strong>:</p>
-<pre><code>NTUSER.DAT: Software\Microsoft\Windows\Shell\Bags
+        <h3>ShellBags</h3>
+        <p><strong>Locations</strong>:</p>
+        <pre><code>NTUSER.DAT: Software\Microsoft\Windows\Shell\Bags
            Software\Microsoft\Windows\Shell\BagMRU
 UsrClass.dat: Local Settings\Software\Microsoft\Windows\Shell\Bags
               Local Settings\Software\Microsoft\Windows\Shell\BagMRU
 </code></pre>
-<p><strong>Content</strong>:</p>
-<ul>
-<li>Folder access (including deleted folders)</li>
-<li>Folder view settings</li>
-<li>Network/removable paths</li>
-</ul>
-<h2>Search History</h2>
-<p><strong>Location</strong>: <code>NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery</code></p>
-<p><strong>Content</strong>: Explorer search terms (MRU list)</p>
-<h2>Dialog History</h2>
-<p><strong>Open/Save Dialog</strong>:</p>
-<pre><code>NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU
+        <p><strong>Content</strong>:</p>
+        <ul>
+            <li>Folder access (including deleted folders)</li>
+            <li>Folder view settings</li>
+            <li>Network/removable paths</li>
+        </ul>
+        <h2>Search History</h2>
+        <p><strong>Location</strong>:
+            <code>NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery</code>
+        </p>
+        <p><strong>Content</strong>: Explorer search terms (MRU list)</p>
+        <h2>Dialog History</h2>
+        <p><strong>Open/Save Dialog</strong>:</p>
+        <pre><code>NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
 </code></pre>
-<p><strong>Last Visited MRU Fields</strong>:</p>
-<ul>
-<li>Executable used</li>
-<li>File path accessed</li>
-</ul>
-<h2>Background Activity Moderator (BAM/DAM)</h2>
-<p><strong>Location</strong> (Windows 10 1709+):</p>
-<pre><code>SYSTEM\CurrentControlSet\Services\bam\State\UserSettings\{SID}
+        <p><strong>Last Visited MRU Fields</strong>:</p>
+        <ul>
+            <li>Executable used</li>
+            <li>File path accessed</li>
+        </ul>
+        <h2>Background Activity Moderator (BAM/DAM)</h2>
+        <p><strong>Location</strong> (Windows 10 1709+):</p>
+        <pre><code>SYSTEM\CurrentControlSet\Services\bam\State\UserSettings\{SID}
 SYSTEM\CurrentControlSet\Services\dam\State\UserSettings\{SID}
 </code></pre>
-<p><strong>Content</strong>:</p>
-<ul>
-<li>Executable full paths</li>
-<li>Last execution timestamp</li>
-<li>Per-user tracking</li>
-</ul>
-<h2>MUI Cache</h2>
-<p><strong>Location</strong>:</p>
-<pre><code>NTUSER.DAT\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache
+        <p><strong>Content</strong>:</p>
+        <ul>
+            <li>Executable full paths</li>
+            <li>Last execution timestamp</li>
+            <li>Per-user tracking</li>
+        </ul>
+        <h2>MUI Cache</h2>
+        <p><strong>Location</strong>:</p>
+        <pre><code>NTUSER.DAT\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache
 UsrClass.dat\Local Settings\Software\Microsoft\Windows\Shell\MuiCache
 </code></pre>
-<p><strong>Content</strong>:</p>
-<ul>
-<li>Executable friendly names</li>
-<li>Application descriptions</li>
-<li>Evidence of execution</li>
-</ul>
-<hr />
-<h1>🔄 Persistence Mechanisms</h1>
-<h2>Common Persistence Locations</h2>
-<h3>Run Keys</h3>
-<pre><code># HKCU (per user)
+        <p><strong>Content</strong>:</p>
+        <ul>
+            <li>Executable friendly names</li>
+            <li>Application descriptions</li>
+            <li>Evidence of execution</li>
+        </ul>
+        <hr />
+        <h1>🔄 Persistence Mechanisms</h1>
+        <h2>Common Persistence Locations</h2>
+        <h3>Run Keys</h3>
+        <pre><code># HKCU (per user)
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Run
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\RunOnce
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\RunOnceEx
@@ -3343,157 +3361,157 @@ SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
 </code></pre>
-<h3>Services</h3>
-<p><strong>Registry Location</strong>:</p>
-<pre><code>SYSTEM\CurrentControlSet\Services\{ServiceName}
+        <h3>Services</h3>
+        <p><strong>Registry Location</strong>:</p>
+        <pre><code>SYSTEM\CurrentControlSet\Services\{ServiceName}
 - ImagePath: Executable path
 - Start: 0=Boot, 1=System, 2=Auto, 3=Manual, 4=Disabled
 - Type: Service type
 </code></pre>
-<p><strong>Event Log</strong>: System Event ID 7045 (Service Install)</p>
-<p><strong>Analysis</strong>:</p>
-<pre><code class="language-powershell"># List services
+        <p><strong>Event Log</strong>: System Event ID 7045 (Service Install)</p>
+        <p><strong>Analysis</strong>:</p>
+        <pre><code class="language-powershell"># List services
 Get-Service | Select-Object Name, Status, StartType, PathName
 
 # WMI
 Get-WmiObject Win32_Service | Select-Object Name, PathName, StartMode
 </code></pre>
-<h3>Scheduled Tasks</h3>
-<p><strong>Locations</strong>:</p>
-<pre><code>File System: C:\Windows\System32\Tasks\
+        <h3>Scheduled Tasks</h3>
+        <p><strong>Locations</strong>:</p>
+        <pre><code>File System: C:\Windows\System32\Tasks\
 C:\Windows\Tasks\
 
 Registry:
 SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\
 SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\
 </code></pre>
-<p><strong>Event Log</strong>: TaskScheduler/Operational, Security 4698/4699/4702</p>
-<p><strong>Analysis</strong>:</p>
-<pre><code class="language-powershell"># List scheduled tasks
+        <p><strong>Event Log</strong>: TaskScheduler/Operational, Security 4698/4699/4702</p>
+        <p><strong>Analysis</strong>:</p>
+        <pre><code class="language-powershell"># List scheduled tasks
 Get-ScheduledTask | Select-Object TaskName, State, TaskPath
 
 # Task details
 Get-ScheduledTask -TaskName "TaskName" | Get-ScheduledTaskInfo
 </code></pre>
-<h3>Startup Folders</h3>
-<pre><code># Per user
+        <h3>Startup Folders</h3>
+        <pre><code># Per user
 C:\Users\&lt;user&gt;\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\
 
 # All users
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\
 </code></pre>
-<h3>Winlogon</h3>
-<pre><code>SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+        <h3>Winlogon</h3>
+        <pre><code>SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
 - Shell (default: explorer.exe)
 - Userinit (default: C:\Windows\system32\userinit.exe,)
 </code></pre>
-<h3>Image File Execution Options (IFEO)</h3>
-<pre><code>SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\{process.exe}
+        <h3>Image File Execution Options (IFEO)</h3>
+        <pre><code>SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\{process.exe}
 - Debugger: Path to "debugger" (actually hijacker)
 
 SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\{process.exe}
 - MonitorProcess: Process to run on exit
 </code></pre>
-<h3>AppInit_DLLs</h3>
-<pre><code>SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows
+        <h3>AppInit_DLLs</h3>
+        <pre><code>SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows
 - AppInit_DLLs: DLL paths loaded into every process using User32.dll
 - LoadAppInit_DLLs: Enable flag
 
 SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Windows
 - Same for 32-bit
 </code></pre>
-<h3>COM Object Hijacking</h3>
-<pre><code># HKCU takes precedence over HKLM
+        <h3>COM Object Hijacking</h3>
+        <pre><code># HKCU takes precedence over HKLM
 NTUSER.DAT\Software\Classes\CLSID\{GUID}\InprocServer32
 - (Default): Path to DLL
 
 SOFTWARE\Classes\CLSID\{GUID}\InprocServer32
 </code></pre>
-<h3>WMI Event Subscriptions</h3>
-<pre><code class="language-powershell"># List WMI subscriptions
+        <h3>WMI Event Subscriptions</h3>
+        <pre><code class="language-powershell"># List WMI subscriptions
 Get-WMIObject -Namespace root\Subscription -Class __EventFilter
 Get-WMIObject -Namespace root\Subscription -Class __EventConsumer
 Get-WMIObject -Namespace root\Subscription -Class __FilterToConsumerBinding
 </code></pre>
-<p><strong>File Location</strong>: <code>C:\Windows\System32\wbem\Repository\</code></p>
-<h3>Print Monitors</h3>
-<pre><code>SYSTEM\CurrentControlSet\Control\Print\Monitors\{MonitorName}
+        <p><strong>File Location</strong>: <code>C:\Windows\System32\wbem\Repository\</code></p>
+        <h3>Print Monitors</h3>
+        <pre><code>SYSTEM\CurrentControlSet\Control\Print\Monitors\{MonitorName}
 - Driver: DLL path
 </code></pre>
-<h3>LSA Security Packages</h3>
-<pre><code>SYSTEM\CurrentControlSet\Control\Lsa
+        <h3>LSA Security Packages</h3>
+        <pre><code>SYSTEM\CurrentControlSet\Control\Lsa
 - Authentication Packages
 - Security Packages
 </code></pre>
-<h3>BootExecute</h3>
-<pre><code>SYSTEM\CurrentControlSet\Control\Session Manager
+        <h3>BootExecute</h3>
+        <pre><code>SYSTEM\CurrentControlSet\Control\Session Manager
 - BootExecute: Programs run at boot (normally: autocheck autochk *)
 </code></pre>
-<h3>DLL Search Order Hijacking</h3>
-<p>Common hijackable DLL locations:</p>
-<pre><code>1. Application directory
+        <h3>DLL Search Order Hijacking</h3>
+        <p>Common hijackable DLL locations:</p>
+        <pre><code>1. Application directory
 2. C:\Windows\System32
 3. C:\Windows\System
 4. C:\Windows
 5. Current directory
 6. PATH directories
 </code></pre>
-<h2>Persistence Detection Checklist</h2>
-<table>
-<thead>
-<tr>
-<th>Location</th>
-<th>Registry/File Path</th>
-<th>Tool</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Run Keys</td>
-<td>Multiple registry locations</td>
-<td>RECmd, Registry Explorer</td>
-</tr>
-<tr>
-<td>Services</td>
-<td>SYSTEM hive, Event 7045</td>
-<td>Registry Explorer, EvtxECmd</td>
-</tr>
-<tr>
-<td>Scheduled Tasks</td>
-<td>Tasks folder, TaskScheduler logs</td>
-<td>Task folder, Event logs</td>
-</tr>
-<tr>
-<td>Startup Folders</td>
-<td>Start Menu\Programs\Startup</td>
-<td>File system analysis</td>
-</tr>
-<tr>
-<td>Winlogon</td>
-<td>SOFTWARE hive</td>
-<td>Registry Explorer</td>
-</tr>
-<tr>
-<td>IFEO</td>
-<td>SOFTWARE hive</td>
-<td>Registry Explorer</td>
-</tr>
-<tr>
-<td>WMI</td>
-<td>WMI Repository</td>
-<td>PowerShell, autoruns</td>
-</tr>
-<tr>
-<td>COM Hijacking</td>
-<td>CLSID entries</td>
-<td>Registry Explorer</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1>🦠 Malware Indicators</h1>
-<h2>Suspicious Locations</h2>
-<pre><code>High-Risk Paths:
+        <h2>Persistence Detection Checklist</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Registry/File Path</th>
+                    <th>Tool</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Run Keys</td>
+                    <td>Multiple registry locations</td>
+                    <td>RECmd, Registry Explorer</td>
+                </tr>
+                <tr>
+                    <td>Services</td>
+                    <td>SYSTEM hive, Event 7045</td>
+                    <td>Registry Explorer, EvtxECmd</td>
+                </tr>
+                <tr>
+                    <td>Scheduled Tasks</td>
+                    <td>Tasks folder, TaskScheduler logs</td>
+                    <td>Task folder, Event logs</td>
+                </tr>
+                <tr>
+                    <td>Startup Folders</td>
+                    <td>Start Menu\Programs\Startup</td>
+                    <td>File system analysis</td>
+                </tr>
+                <tr>
+                    <td>Winlogon</td>
+                    <td>SOFTWARE hive</td>
+                    <td>Registry Explorer</td>
+                </tr>
+                <tr>
+                    <td>IFEO</td>
+                    <td>SOFTWARE hive</td>
+                    <td>Registry Explorer</td>
+                </tr>
+                <tr>
+                    <td>WMI</td>
+                    <td>WMI Repository</td>
+                    <td>PowerShell, autoruns</td>
+                </tr>
+                <tr>
+                    <td>COM Hijacking</td>
+                    <td>CLSID entries</td>
+                    <td>Registry Explorer</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <h1>🦠 Malware Indicators</h1>
+        <h2>Suspicious Locations</h2>
+        <pre><code>High-Risk Paths:
 C:\Users\&lt;user&gt;\AppData\Local\Temp\
 C:\Users\&lt;user&gt;\AppData\Roaming\
 C:\Windows\Temp\
@@ -3515,542 +3533,545 @@ Suspicious Patterns:
 - Excessive path depth
 - Non-ASCII characters in path
 </code></pre>
-<h2>Process Anomalies to Look For</h2>
-<h3>Parent-Child Relationship Anomalies</h3>
-<table>
-<thead>
-<tr>
-<th>Process</th>
-<th>Expected Parent</th>
-<th>Suspicious If</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>svchost.exe</code></td>
-<td><code>services.exe</code></td>
-<td>Any other parent</td>
-</tr>
-<tr>
-<td><code>smss.exe</code></td>
-<td><code>System</code></td>
-<td>Any other parent</td>
-</tr>
-<tr>
-<td><code>csrss.exe</code></td>
-<td><code>Created by smss.exe</code></td>
-<td>Any other parent visible</td>
-</tr>
-<tr>
-<td><code>wininit.exe</code></td>
-<td><code>smss.exe</code></td>
-<td>Any other parent</td>
-</tr>
-<tr>
-<td><code>winlogon.exe</code></td>
-<td><code>smss.exe</code></td>
-<td>Any other parent</td>
-</tr>
-<tr>
-<td><code>lsass.exe</code></td>
-<td><code>wininit.exe</code></td>
-<td>Any other parent</td>
-</tr>
-</tbody>
-</table>
-</div>
-<script>
-    const state = {
-        favorites: JSON.parse(localStorage.getItem('forensicsFavorites') || '[]'),
-        isDark: localStorage.getItem('forensicsTheme') !== 'light',
-        konamiProgress: 0,
-        konamiCode: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
-        matrixActive: false,
-        showingFavorites: false
-    };
-
-    document.addEventListener('DOMContentLoaded', () => {
-        initSections();
-        addCopyButtons();
-        applySyntax();
-        initTheme();
-        initFavorites();
-        initScrollObserver();
-        initProgressBar();
-    });
-
-    /* ===== SECTION INITIALIZATION ===== */
-    function initSections() {
-        const main = document.getElementById('main-content');
-        const children = Array.from(main.children);
-        const secs = [];
-        let curSec = null;
-        let curBody = null;
-
-        children.forEach(el => {
-            if (el.tagName === 'H1') {
-                if (curSec && curBody) {
-                    curSec.appendChild(curBody);
-                    secs.push(curSec);
-                }
-                const text = el.textContent.trim();
-                const id = getSectionId(text);
-
-                curSec = document.createElement('div');
-                curSec.className = 'content-section fade-in';
-                curSec.id = id;
-                curSec.setAttribute('data-section-name', text);
-
-                const header = document.createElement('div');
-                header.className = 'section-header';
-                header.innerHTML =
-                    '<span class="fav-btn" title="Toggle Favorite">&#11088;</span>' +
-                    '<h1>' + text + '</h1>' +
-                    '<span class="section-toggle">&#9660;</span>';
-
-                // Fix: capture section in block-scoped variable for correct closure
-                const thisSec = curSec;
-                const favBtn = header.querySelector('.fav-btn');
-                favBtn.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    toggleFavorite(id, this);
-                });
-                header.addEventListener('click', function (e) {
-                    if (e.target.closest('.fav-btn')) return;
-                    toggleSection(thisSec);
-                });
-
-                curSec.appendChild(header);
-                curBody = document.createElement('div');
-                curBody.className = 'section-body';
-            } else if (curBody) {
-                // Move node directly instead of cloning (avoids duplicate DOM)
-                curBody.appendChild(el);
-            }
-        });
-
-        if (curSec && curBody) {
-            curSec.appendChild(curBody);
-            secs.push(curSec);
-        }
-
-        main.innerHTML = '';
-        secs.forEach(sec => {
-            const body = sec.querySelector('.section-body');
-            if (body) wrapInCards(body);
-            main.appendChild(sec);
-        });
-    }
-
-    function wrapInCards(body) {
-        const children = Array.from(body.children);
-        let card = null;
-        const frag = document.createDocumentFragment();
-
-        children.forEach(el => {
-            if (el.tagName === 'H2') {
-                if (card) frag.appendChild(card);
-                card = document.createElement('div');
-                card.className = 'card';
-                card.appendChild(el);
-            } else if (el.tagName === 'HR') {
-                if (card) { frag.appendChild(card); card = null; }
-            } else if (card) {
-                card.appendChild(el);
-            } else {
-                card = document.createElement('div');
-                card.className = 'card';
-                card.appendChild(el);
-            }
-        });
-        if (card) frag.appendChild(card);
-        body.innerHTML = '';
-        body.appendChild(frag);
-    }
-
-    function getSectionId(text) {
-        const map = {
-            'Quick Reference': 'quick-reference',
-            'Essential Tools': 'essential-tools',
-            'Registry Analysis': 'registry-analysis',
-            'Event Log': 'event-log-analysis',
-            'File System': 'file-system-artifacts',
-            'User Activity': 'user-activity',
-            'Persistence': 'persistence-mechanisms',
-            'Malware': 'malware-indicators'
+        <h2>Process Anomalies to Look For</h2>
+        <h3>Parent-Child Relationship Anomalies</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Process</th>
+                    <th>Expected Parent</th>
+                    <th>Suspicious If</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>svchost.exe</code></td>
+                    <td><code>services.exe</code></td>
+                    <td>Any other parent</td>
+                </tr>
+                <tr>
+                    <td><code>smss.exe</code></td>
+                    <td><code>System</code></td>
+                    <td>Any other parent</td>
+                </tr>
+                <tr>
+                    <td><code>csrss.exe</code></td>
+                    <td><code>Created by smss.exe</code></td>
+                    <td>Any other parent visible</td>
+                </tr>
+                <tr>
+                    <td><code>wininit.exe</code></td>
+                    <td><code>smss.exe</code></td>
+                    <td>Any other parent</td>
+                </tr>
+                <tr>
+                    <td><code>winlogon.exe</code></td>
+                    <td><code>smss.exe</code></td>
+                    <td>Any other parent</td>
+                </tr>
+                <tr>
+                    <td><code>lsass.exe</code></td>
+                    <td><code>wininit.exe</code></td>
+                    <td>Any other parent</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const state = {
+            favorites: JSON.parse(localStorage.getItem('forensicsFavorites') || '[]'),
+            isDark: localStorage.getItem('forensicsTheme') !== 'light',
+            konamiProgress: 0,
+            konamiCode: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+            matrixActive: false,
+            showingFavorites: false
         };
-        for (const [key, id] of Object.entries(map)) {
-            if (text.includes(key)) return id;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initSections();
+            addCopyButtons();
+            applySyntax();
+            initTheme();
+            initFavorites();
+            initScrollObserver();
+            initProgressBar();
+        });
+
+        /* ===== SECTION INITIALIZATION ===== */
+        function initSections() {
+            const main = document.getElementById('main-content');
+            const children = Array.from(main.children);
+            const secs = [];
+            let curSec = null;
+            let curBody = null;
+
+            children.forEach(el => {
+                if (el.tagName === 'H1') {
+                    if (curSec && curBody) {
+                        curSec.appendChild(curBody);
+                        secs.push(curSec);
+                    }
+                    const text = el.textContent.trim();
+                    const id = getSectionId(text);
+
+                    curSec = document.createElement('div');
+                    curSec.className = 'content-section fade-in';
+                    curSec.id = id;
+                    curSec.setAttribute('data-section-name', text);
+
+                    const header = document.createElement('div');
+                    header.className = 'section-header';
+                    header.innerHTML =
+                        '<span class="fav-btn" title="Toggle Favorite">&#11088;</span>' +
+                        '<h1>' + text + '</h1>' +
+                        '<span class="section-toggle">&#9660;</span>';
+
+                    // Fix: capture section in block-scoped variable for correct closure
+                    const thisSec = curSec;
+                    const favBtn = header.querySelector('.fav-btn');
+                    favBtn.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        toggleFavorite(id, this);
+                    });
+                    header.addEventListener('click', function (e) {
+                        if (e.target.closest('.fav-btn')) return;
+                        toggleSection(thisSec);
+                    });
+
+                    curSec.appendChild(header);
+                    curBody = document.createElement('div');
+                    curBody.className = 'section-body';
+                } else if (curBody) {
+                    // Move node directly instead of cloning (avoids duplicate DOM)
+                    curBody.appendChild(el);
+                }
+            });
+
+            if (curSec && curBody) {
+                curSec.appendChild(curBody);
+                secs.push(curSec);
+            }
+
+            main.innerHTML = '';
+            secs.forEach(sec => {
+                const body = sec.querySelector('.section-body');
+                if (body) wrapInCards(body);
+                main.appendChild(sec);
+            });
         }
-        return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-    }
 
-    /* ===== SECTION TOGGLING ===== */
-    function toggleSection(section) {
-        const body = section.querySelector('.section-body');
-        const toggle = section.querySelector('.section-toggle');
-        if (!body || !toggle) return;
+        function wrapInCards(body) {
+            const children = Array.from(body.children);
+            let card = null;
+            const frag = document.createDocumentFragment();
 
-        if (body.classList.contains('collapsed')) {
-            body.classList.remove('collapsed');
-            toggle.classList.remove('collapsed');
-            body.style.maxHeight = body.scrollHeight + 'px';
-            setTimeout(() => { if (!body.classList.contains('collapsed')) body.style.maxHeight = 'none'; }, 500);
-        } else {
-            body.style.maxHeight = body.scrollHeight + 'px';
-            body.offsetHeight; // force reflow
-            body.classList.add('collapsed');
-            toggle.classList.add('collapsed');
+            children.forEach(el => {
+                if (el.tagName === 'H2') {
+                    if (card) frag.appendChild(card);
+                    card = document.createElement('div');
+                    card.className = 'card';
+                    card.appendChild(el);
+                } else if (el.tagName === 'HR') {
+                    if (card) { frag.appendChild(card); card = null; }
+                } else if (card) {
+                    card.appendChild(el);
+                } else {
+                    card = document.createElement('div');
+                    card.className = 'card';
+                    card.appendChild(el);
+                }
+            });
+            if (card) frag.appendChild(card);
+            body.innerHTML = '';
+            body.appendChild(frag);
         }
-    }
 
-    function expandSection(section) {
-        const body = section.querySelector('.section-body');
-        const toggle = section.querySelector('.section-toggle');
-        if (!body || !toggle) return;
-        if (body.classList.contains('collapsed')) {
-            body.classList.remove('collapsed');
-            toggle.classList.remove('collapsed');
-            body.style.maxHeight = body.scrollHeight + 'px';
-            setTimeout(() => { if (!body.classList.contains('collapsed')) body.style.maxHeight = 'none'; }, 500);
+        /* ===== SECTION ID GENERATION ===== */
+        const usedIds = new Set();
+
+        function getSectionId(text) {
+            let baseId = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            if (!baseId) baseId = 'section';
+
+            let id = baseId;
+            let counter = 2;
+
+            while (usedIds.has(id)) {
+                id = `${baseId}-${counter}`;
+                counter++;
+            }
+
+            usedIds.add(id);
+            return id;
         }
-    }
 
-    function toggleAllSections(expand) {
-        document.querySelectorAll('.content-section').forEach(sec => {
-            const body = sec.querySelector('.section-body');
-            const toggle = sec.querySelector('.section-toggle');
+        /* ===== SECTION TOGGLING ===== */
+        function toggleSection(section) {
+            const body = section.querySelector('.section-body');
+            const toggle = section.querySelector('.section-toggle');
             if (!body || !toggle) return;
-            if (expand) {
+
+            if (body.classList.contains('collapsed')) {
                 body.classList.remove('collapsed');
                 toggle.classList.remove('collapsed');
-                body.style.maxHeight = 'none';
+                body.style.maxHeight = body.scrollHeight + 'px';
+                setTimeout(() => { if (!body.classList.contains('collapsed')) body.style.maxHeight = 'none'; }, 500);
             } else {
                 body.style.maxHeight = body.scrollHeight + 'px';
-                body.offsetHeight;
+                body.offsetHeight; // force reflow
                 body.classList.add('collapsed');
                 toggle.classList.add('collapsed');
             }
-        });
-    }
-
-    function scrollToSection(id) {
-        const el = document.getElementById(id);
-        if (!el) return;
-        expandSection(el);
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        updateActiveTab(id);
-    }
-
-    function updateActiveTab(id) {
-        document.querySelectorAll('.nav-tab').forEach(tab => {
-            tab.classList.toggle('active', tab.dataset.section === id);
-        });
-    }
-
-    /* ===== COPY BUTTONS with file:// fallback ===== */
-    function copyText(text) {
-        if (navigator.clipboard && navigator.clipboard.writeText && location.protocol !== 'file:') {
-            return navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
-        }
-        return fallbackCopy(text);
-    }
-
-    function fallbackCopy(text) {
-        return new Promise((resolve, reject) => {
-            const ta = document.createElement('textarea');
-            ta.value = text;
-            ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0';
-            document.body.appendChild(ta);
-            ta.select();
-            try { document.execCommand('copy'); resolve(); }
-            catch (e) { reject(e); }
-            finally { document.body.removeChild(ta); }
-        });
-    }
-
-    function addCopyButtons() {
-        document.querySelectorAll('pre').forEach(pre => {
-            const btn = document.createElement('button');
-            btn.className = 'copy-btn';
-            btn.textContent = '\u{1F4CB} Copy';
-            btn.addEventListener('click', function () {
-                const code = pre.querySelector('code');
-                const text = code ? code.textContent : pre.textContent;
-                copyText(text).then(() => {
-                    btn.textContent = '\u2705 Copied!';
-                    btn.classList.add('copied');
-                    showToast('Copied to clipboard!');
-                    setTimeout(() => { btn.textContent = '\u{1F4CB} Copy'; btn.classList.remove('copied'); }, 2000);
-                }).catch(() => showToast('Copy failed'));
-            });
-            pre.style.position = 'relative';
-            pre.appendChild(btn);
-        });
-    }
-
-    /* ===== SYNTAX HIGHLIGHTING (safe, text-node based) ===== */
-    function applySyntax() {
-        document.querySelectorAll('pre code').forEach(block => {
-            const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
-            const textNodes = [];
-            let node;
-            while (node = walker.nextNode()) textNodes.push(node);
-
-            textNodes.forEach(textNode => {
-                const text = textNode.textContent;
-                if (!text.trim()) return;
-
-                const lines = text.split('\n');
-                const frag = document.createDocumentFragment();
-
-                lines.forEach((line, idx) => {
-                    if (idx > 0) frag.appendChild(document.createTextNode('\n'));
-
-                    // Shell/PowerShell comments
-                    const commentMatch = line.match(/^(\s*)(#.*)$/);
-                    if (commentMatch) {
-                        if (commentMatch[1]) frag.appendChild(document.createTextNode(commentMatch[1]));
-                        const span = document.createElement('span');
-                        span.style.cssText = 'color:#6a7a8a;font-style:italic';
-                        span.textContent = commentMatch[2];
-                        frag.appendChild(span);
-                        return;
-                    }
-
-                    // CMD comments
-                    const cmdMatch = line.match(/^(\s*)(::.*|REM\s.*)$/i);
-                    if (cmdMatch) {
-                        if (cmdMatch[1]) frag.appendChild(document.createTextNode(cmdMatch[1]));
-                        const span = document.createElement('span');
-                        span.style.cssText = 'color:#6a7a8a;font-style:italic';
-                        span.textContent = cmdMatch[2];
-                        frag.appendChild(span);
-                        return;
-                    }
-
-                    // Highlight flags and strings in non-comment lines
-                    const parts = line.split(/(--?\w[\w-]*|"[^"]*"|'[^']*')/g);
-                    parts.forEach(part => {
-                        if (/^--?\w/.test(part)) {
-                            const span = document.createElement('span');
-                            span.style.color = 'var(--og)';
-                            span.textContent = part;
-                            frag.appendChild(span);
-                        } else if (/^["'].*["']$/.test(part)) {
-                            const span = document.createElement('span');
-                            span.style.color = 'var(--lm)';
-                            span.textContent = part;
-                            frag.appendChild(span);
-                        } else {
-                            frag.appendChild(document.createTextNode(part));
-                        }
-                    });
-                });
-
-                textNode.parentNode.replaceChild(frag, textNode);
-            });
-        });
-    }
-
-    /* ===== SEARCH ===== */
-    document.getElementById('search-box').addEventListener('input', function () {
-        const query = this.value.trim().toLowerCase();
-        const sections = document.querySelectorAll('.content-section');
-        let totalMatches = 0;
-
-        if (!query) {
-            sections.forEach(s => s.style.display = '');
-            document.querySelectorAll('.card').forEach(c => c.style.display = '');
-            document.getElementById('search-count').textContent = '';
-            return;
         }
 
-        sections.forEach(section => {
-            const cards = section.querySelectorAll('.card');
-            let sectionHasMatch = false;
-            cards.forEach(card => {
-                const text = card.textContent.toLowerCase();
-                if (text.includes(query)) {
-                    card.style.display = '';
-                    sectionHasMatch = true;
-                    totalMatches++;
+        function expandSection(section) {
+            const body = section.querySelector('.section-body');
+            const toggle = section.querySelector('.section-toggle');
+            if (!body || !toggle) return;
+            if (body.classList.contains('collapsed')) {
+                body.classList.remove('collapsed');
+                toggle.classList.remove('collapsed');
+                body.style.maxHeight = body.scrollHeight + 'px';
+                setTimeout(() => { if (!body.classList.contains('collapsed')) body.style.maxHeight = 'none'; }, 500);
+            }
+        }
+
+        function toggleAllSections(expand) {
+            document.querySelectorAll('.content-section').forEach(sec => {
+                const body = sec.querySelector('.section-body');
+                const toggle = sec.querySelector('.section-toggle');
+                if (!body || !toggle) return;
+                if (expand) {
+                    body.classList.remove('collapsed');
+                    toggle.classList.remove('collapsed');
+                    body.style.maxHeight = 'none';
                 } else {
-                    card.style.display = 'none';
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                    body.offsetHeight;
+                    body.classList.add('collapsed');
+                    toggle.classList.add('collapsed');
                 }
             });
-            section.style.display = sectionHasMatch ? '' : 'none';
-            if (sectionHasMatch) expandSection(section);
-        });
-
-        document.getElementById('search-count').textContent =
-            totalMatches > 0 ? totalMatches + ' card(s) found' : 'No results found';
-    });
-
-    /* ===== THEME ===== */
-    function initTheme() {
-        if (!state.isDark) {
-            document.body.classList.add('light-mode');
-            document.getElementById('theme-btn').textContent = '\u2600\uFE0F';
         }
-    }
 
-    function toggleTheme() {
-        state.isDark = !state.isDark;
-        document.body.classList.toggle('light-mode');
-        document.getElementById('theme-btn').textContent = state.isDark ? '\u{1F319}' : '\u2600\uFE0F';
-        localStorage.setItem('forensicsTheme', state.isDark ? 'dark' : 'light');
-        showToast(state.isDark ? 'Dark mode enabled' : 'Light mode enabled');
-    }
-
-    /* ===== FAVORITES ===== */
-    function initFavorites() {
-        state.favorites.forEach(id => {
-            const sec = document.getElementById(id);
-            if (sec) {
-                const btn = sec.querySelector('.fav-btn');
-                if (btn) btn.classList.add('active');
-            }
-        });
-    }
-
-    function toggleFavorite(id, btn) {
-        const idx = state.favorites.indexOf(id);
-        if (idx > -1) {
-            state.favorites.splice(idx, 1);
-            btn.classList.remove('active');
-            showToast('Removed from favorites');
-        } else {
-            state.favorites.push(id);
-            btn.classList.add('active');
-            showToast('Added to favorites!');
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            expandSection(el);
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            updateActiveTab(id);
         }
-        localStorage.setItem('forensicsFavorites', JSON.stringify(state.favorites));
-    }
 
-    function showFavorites() {
-        state.showingFavorites = !state.showingFavorites;
-        const sections = document.querySelectorAll('.content-section');
-        if (state.showingFavorites && state.favorites.length > 0) {
-            sections.forEach(sec => {
-                sec.style.display = state.favorites.includes(sec.id) ? '' : 'none';
+        function updateActiveTab(id) {
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.section === id);
             });
-            showToast('Showing favorites only');
-        } else {
-            sections.forEach(sec => sec.style.display = '');
-            if (state.showingFavorites) {
-                showToast('No favorites yet!');
-                state.showingFavorites = false;
+        }
+
+        /* ===== COPY BUTTONS with file:// fallback ===== */
+        function copyText(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText && location.protocol !== 'file:') {
+                return navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+            }
+            return fallbackCopy(text);
+        }
+
+        function fallbackCopy(text) {
+            return new Promise((resolve, reject) => {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0';
+                document.body.appendChild(ta);
+                ta.select();
+                try { document.execCommand('copy'); resolve(); }
+                catch (e) { reject(e); }
+                finally { document.body.removeChild(ta); }
+            });
+        }
+
+        function addCopyButtons() {
+            document.querySelectorAll('pre').forEach(pre => {
+                const btn = document.createElement('button');
+                btn.className = 'copy-btn';
+                btn.textContent = '\u{1F4CB} Copy';
+                btn.addEventListener('click', function () {
+                    const code = pre.querySelector('code');
+                    const text = code ? code.textContent : pre.textContent;
+                    copyText(text).then(() => {
+                        btn.textContent = '\u2705 Copied!';
+                        btn.classList.add('copied');
+                        showToast('Copied to clipboard!');
+                        setTimeout(() => { btn.textContent = '\u{1F4CB} Copy'; btn.classList.remove('copied'); }, 2000);
+                    }).catch(() => showToast('Copy failed'));
+                });
+                pre.style.position = 'relative';
+                pre.appendChild(btn);
+            });
+        }
+
+        /* ===== SYNTAX HIGHLIGHTING (safe, text-node based) ===== */
+        function applySyntax() {
+            document.querySelectorAll('pre code').forEach(block => {
+                const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+                const textNodes = [];
+                let node;
+                while (node = walker.nextNode()) textNodes.push(node);
+
+                textNodes.forEach(textNode => {
+                    const text = textNode.textContent;
+                    if (!text.trim()) return;
+
+                    const lines = text.split('\n');
+                    const frag = document.createDocumentFragment();
+
+                    lines.forEach((line, idx) => {
+                        if (idx > 0) frag.appendChild(document.createTextNode('\n'));
+
+                        // Shell/PowerShell comments
+                        const commentMatch = line.match(/^(\s*)(#.*)$/);
+                        if (commentMatch) {
+                            if (commentMatch[1]) frag.appendChild(document.createTextNode(commentMatch[1]));
+                            const span = document.createElement('span');
+                            span.style.cssText = 'color:#6a7a8a;font-style:italic';
+                            span.textContent = commentMatch[2];
+                            frag.appendChild(span);
+                            return;
+                        }
+
+                        // CMD comments
+                        const cmdMatch = line.match(/^(\s*)(::.*|REM\s.*)$/i);
+                        if (cmdMatch) {
+                            if (cmdMatch[1]) frag.appendChild(document.createTextNode(cmdMatch[1]));
+                            const span = document.createElement('span');
+                            span.style.cssText = 'color:#6a7a8a;font-style:italic';
+                            span.textContent = cmdMatch[2];
+                            frag.appendChild(span);
+                            return;
+                        }
+
+                        // Highlight flags and strings in non-comment lines
+                        // Regex improved to avoid matching apostrophes in words (e.g. don't)
+                        const parts = line.split(/(--?\w[\w-]*|"[^"]*"|(?<!\w)'[^']*')/g);
+                        parts.forEach(part => {
+                            if (/^--?\w/.test(part)) {
+                                const span = document.createElement('span');
+                                span.style.color = 'var(--og)';
+                                span.textContent = part;
+                                frag.appendChild(span);
+                            } else if (/^["']/.test(part)) {
+                                const span = document.createElement('span');
+                                span.style.color = 'var(--lm)';
+                                span.textContent = part;
+                                frag.appendChild(span);
+                            } else {
+                                frag.appendChild(document.createTextNode(part));
+                            }
+                        });
+                    });
+
+                    textNode.parentNode.replaceChild(frag, textNode);
+                });
+            });
+        }
+
+        /* ===== SEARCH ===== */
+        document.getElementById('search-box').addEventListener('input', function () {
+            const query = this.value.trim().toLowerCase();
+            const sections = document.querySelectorAll('.content-section');
+            let totalMatches = 0;
+
+            if (!query) {
+                sections.forEach(s => s.style.display = '');
+                document.querySelectorAll('.card').forEach(c => c.style.display = '');
+                document.getElementById('search-count').textContent = '';
+                return;
+            }
+
+            sections.forEach(section => {
+                const cards = section.querySelectorAll('.card');
+                let sectionHasMatch = false;
+                cards.forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    if (text.includes(query)) {
+                        card.style.display = '';
+                        sectionHasMatch = true;
+                        totalMatches++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                section.style.display = sectionHasMatch ? '' : 'none';
+                if (sectionHasMatch) expandSection(section);
+            });
+
+            document.getElementById('search-count').textContent =
+                totalMatches > 0 ? totalMatches + ' card(s) found' : 'No results found';
+        });
+
+        /* ===== THEME ===== */
+        function initTheme() {
+            if (!state.isDark) {
+                document.body.classList.add('light-mode');
+                document.getElementById('theme-btn').textContent = '\u2600\uFE0F';
+            }
+        }
+
+        function toggleTheme() {
+            state.isDark = !state.isDark;
+            document.body.classList.toggle('light-mode');
+            document.getElementById('theme-btn').textContent = state.isDark ? '\u{1F319}' : '\u2600\uFE0F';
+            localStorage.setItem('forensicsTheme', state.isDark ? 'dark' : 'light');
+            showToast(state.isDark ? 'Dark mode enabled' : 'Light mode enabled');
+        }
+
+        /* ===== FAVORITES ===== */
+        function initFavorites() {
+            state.favorites.forEach(id => {
+                const sec = document.getElementById(id);
+                if (sec) {
+                    const btn = sec.querySelector('.fav-btn');
+                    if (btn) btn.classList.add('active');
+                }
+            });
+        }
+
+        function toggleFavorite(id, btn) {
+            const idx = state.favorites.indexOf(id);
+            if (idx > -1) {
+                state.favorites.splice(idx, 1);
+                btn.classList.remove('active');
+                showToast('Removed from favorites');
             } else {
-                showToast('Showing all sections');
+                state.favorites.push(id);
+                btn.classList.add('active');
+                showToast('Added to favorites!');
             }
+            localStorage.setItem('forensicsFavorites', JSON.stringify(state.favorites));
         }
-    }
 
-    /* ===== TOAST ===== */
-    function showToast(msg) {
-        const t = document.getElementById('toast');
-        t.textContent = msg;
-        t.classList.add('show');
-        clearTimeout(t._t);
-        t._t = setTimeout(() => t.classList.remove('show'), 2500);
-    }
-
-    /* ===== KEYBOARD SHORTCUTS ===== */
-    document.addEventListener('keydown', e => {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-            e.preventDefault();
-            const sb = document.getElementById('search-box');
-            sb.focus();
-            sb.select();
-            return;
-        }
-        if (e.key === 'Escape') {
-            document.getElementById('search-box').blur();
-            if (state.matrixActive) stopMatrix();
-            return;
-        }
-        // Konami code
-        if (e.keyCode === state.konamiCode[state.konamiProgress]) {
-            state.konamiProgress++;
-            if (state.konamiProgress === state.konamiCode.length) {
-                state.konamiProgress = 0;
-                toggleMatrix();
-            }
-        } else {
-            state.konamiProgress = 0;
-        }
-    });
-
-    /* ===== SCROLL OBSERVER ===== */
-    function initScrollObserver() {
-        const obs = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    if (entry.target.classList.contains('content-section'))
-                        updateActiveTab(entry.target.id);
+        function showFavorites() {
+            state.showingFavorites = !state.showingFavorites;
+            const sections = document.querySelectorAll('.content-section');
+            if (state.showingFavorites && state.favorites.length > 0) {
+                sections.forEach(sec => {
+                    sec.style.display = state.favorites.includes(sec.id) ? '' : 'none';
+                });
+                showToast('Showing favorites only');
+            } else {
+                sections.forEach(sec => sec.style.display = '');
+                if (state.showingFavorites) {
+                    showToast('No favorites yet!');
+                    state.showingFavorites = false;
+                } else {
+                    showToast('Showing all sections');
                 }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
-        // Observe after sections are built
-        setTimeout(() => {
-            document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-        }, 100);
-    }
-
-    /* ===== PROGRESS BAR ===== */
-    function initProgressBar() {
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-            document.getElementById('progress-bar').style.width = progress + '%';
-        });
-    }
-
-    /* ===== MATRIX RAIN EASTER EGG ===== */
-    function toggleMatrix() { state.matrixActive ? stopMatrix() : startMatrix(); }
-
-    function startMatrix() {
-        state.matrixActive = true;
-        const canvas = document.getElementById('matrix-canvas');
-        canvas.classList.add('active');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        const cols = Math.floor(canvas.width / 16);
-        const drops = new Array(cols).fill(1);
-        const chars = '\u30A2\u30A4\u30A6\u30A8\u30AA\u30AB\u30AD\u30AF01ABCDEF';
-        state.matrixInterval = setInterval(() => {
-            ctx.fillStyle = 'rgba(0,0,0,0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#0f0';
-            ctx.font = '14px monospace';
-            for (let i = 0; i < drops.length; i++) {
-                const t = chars[Math.floor(Math.random() * chars.length)];
-                ctx.fillText(t, i * 16, drops[i] * 16);
-                if (drops[i] * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
-                drops[i]++;
             }
-        }, 45);
-        showToast('Matrix mode! Press Escape to exit');
-        setTimeout(() => { if (state.matrixActive) stopMatrix(); }, 15000);
-    }
+        }
 
-    function stopMatrix() {
-        state.matrixActive = false;
-        const canvas = document.getElementById('matrix-canvas');
-        canvas.classList.remove('active');
-        clearInterval(state.matrixInterval);
-        canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-    }
+        /* ===== TOAST ===== */
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            clearTimeout(t._t);
+            t._t = setTimeout(() => t.classList.remove('show'), 2500);
+        }
 
-    window.addEventListener('resize', () => {
-        const c = document.getElementById('matrix-canvas');
-        if (state.matrixActive) { c.width = window.innerWidth; c.height = window.innerHeight; }
-    });
-</script>
+        /* ===== KEYBOARD SHORTCUTS ===== */
+        document.addEventListener('keydown', e => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                const sb = document.getElementById('search-box');
+                sb.focus();
+                sb.select();
+                return;
+            }
+            if (e.key === 'Escape') {
+                document.getElementById('search-box').blur();
+                if (state.matrixActive) stopMatrix();
+                return;
+            }
+            // Konami code
+            if (e.keyCode === state.konamiCode[state.konamiProgress]) {
+                state.konamiProgress++;
+                if (state.konamiProgress === state.konamiCode.length) {
+                    state.konamiProgress = 0;
+                    toggleMatrix();
+                }
+            } else {
+                state.konamiProgress = 0;
+            }
+        });
+
+        /* ===== SCROLL OBSERVER ===== */
+        function initScrollObserver() {
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        if (entry.target.classList.contains('content-section'))
+                            updateActiveTab(entry.target.id);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+            // Observe after sections are built
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+            }, 100);
+        }
+
+        /* ===== PROGRESS BAR ===== */
+        function initProgressBar() {
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                document.getElementById('progress-bar').style.width = progress + '%';
+            });
+        }
+
+        /* ===== MATRIX RAIN EASTER EGG ===== */
+        function toggleMatrix() { state.matrixActive ? stopMatrix() : startMatrix(); }
+
+        function startMatrix() {
+            state.matrixActive = true;
+            const canvas = document.getElementById('matrix-canvas');
+            canvas.classList.add('active');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            const cols = Math.floor(canvas.width / 16);
+            const drops = new Array(cols).fill(1);
+            const chars = '\u30A2\u30A4\u30A6\u30A8\u30AA\u30AB\u30AD\u30AF01ABCDEF';
+            state.matrixInterval = setInterval(() => {
+                ctx.fillStyle = 'rgba(0,0,0,0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#0f0';
+                ctx.font = '14px monospace';
+                for (let i = 0; i < drops.length; i++) {
+                    const t = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(t, i * 16, drops[i] * 16);
+                    if (drops[i] * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                    drops[i]++;
+                }
+            }, 45);
+            showToast('Matrix mode! Press Escape to exit');
+            setTimeout(() => { if (state.matrixActive) stopMatrix(); }, 15000);
+        }
+
+        function stopMatrix() {
+            state.matrixActive = false;
+            const canvas = document.getElementById('matrix-canvas');
+            canvas.classList.remove('active');
+            clearInterval(state.matrixInterval);
+            canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        window.addEventListener('resize', () => {
+            const c = document.getElementById('matrix-canvas');
+            if (state.matrixActive) { c.width = window.innerWidth; c.height = window.innerHeight; }
+        });
+    </script>
 </body>
 
 </html>
