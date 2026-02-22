@@ -252,6 +252,12 @@
             border-radius: 0 4px 4px 0
         }
 
+        .line-highlight.line-highlight-active {
+            background: rgba(255, 221, 0, 0.42) !important;
+            border-left-color: #ffdd00 !important;
+            box-shadow: 0 0 8px rgba(255, 221, 0, 0.35)
+        }
+
         pre .line-highlight {
             display: block;
             background: rgba(255, 221, 0, 0.15);
@@ -261,14 +267,90 @@
             border-radius: 0 3px 3px 0
         }
 
+        pre .line-highlight.line-highlight-active {
+            background: rgba(255, 221, 0, 0.38);
+            border-left-color: #ffdd00;
+            box-shadow: 0 0 6px rgba(255, 221, 0, 0.35)
+        }
+
         .light-mode .line-highlight {
             background: rgba(230, 160, 0, 0.22) !important;
             border-left-color: rgba(200, 130, 0, 0.85) !important
         }
 
+        .light-mode .line-highlight.line-highlight-active {
+            background: rgba(230, 160, 0, 0.5) !important;
+            border-left-color: #c88000 !important
+        }
+
         .light-mode pre .line-highlight {
             background: rgba(230, 160, 0, 0.18);
             border-left-color: rgba(200, 130, 0, 0.85)
+        }
+
+        .search-nav {
+            display: none;
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            background: var(--card);
+            border: 1px solid var(--bdr);
+            border-radius: 12px;
+            padding: 12px 10px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.4), 0 0 16px rgba(0,255,255,0.08)
+        }
+
+        .search-nav.visible { display: flex }
+
+        .search-nav-btn {
+            background: var(--bg2);
+            border: 1px solid var(--bdr);
+            border-radius: 8px;
+            color: var(--cy);
+            font-family: 'Fira Code', monospace;
+            font-size: .8rem;
+            padding: 7px 14px;
+            cursor: pointer;
+            transition: var(--tr);
+            user-select: none;
+            width: 100%;
+            text-align: center
+        }
+
+        .search-nav-btn:hover {
+            border-color: var(--cy);
+            background: var(--card-h);
+            box-shadow: 0 0 10px rgba(0,255,255,0.18)
+        }
+
+        .search-nav-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            box-shadow: none
+        }
+
+        .search-nav-label {
+            color: var(--cy);
+            font-family: 'Fira Code', monospace;
+            font-size: .85rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 2px 4px
+        }
+
+        .search-nav-title {
+            color: var(--t3);
+            font-family: 'Fira Code', monospace;
+            font-size: .7rem;
+            text-align: center;
+            letter-spacing: .05em;
+            text-transform: uppercase
         }
 
         .toolbar {
@@ -4542,12 +4624,40 @@ Suspicious Patterns:
         }
 
         /* ===== SEARCH ===== */
+        let searchHits = [];
+        let searchHitIndex = 0;
+
         function clearLineHighlights(card) {
-            card.querySelectorAll('.line-highlight').forEach(el => el.classList.remove('line-highlight'));
+            card.querySelectorAll('.line-highlight').forEach(el => el.classList.remove('line-highlight', 'line-highlight-active'));
             card.querySelectorAll('pre code[data-original]').forEach(el => {
                 el.innerHTML = el.getAttribute('data-original');
                 el.removeAttribute('data-original');
             });
+        }
+
+        function navigateHit(dir) {
+            if (!searchHits.length) return;
+            searchHits[searchHitIndex].classList.remove('line-highlight-active');
+            searchHitIndex = (searchHitIndex + dir + searchHits.length) % searchHits.length;
+            const target = searchHits[searchHitIndex];
+            target.classList.add('line-highlight-active');
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            updateNavUI();
+        }
+
+        function updateNavUI() {
+            const nav = document.getElementById('search-nav');
+            const label = document.getElementById('search-nav-label');
+            const prev = document.getElementById('search-prev');
+            const next = document.getElementById('search-next');
+            if (searchHits.length > 1) {
+                nav.classList.add('visible');
+                label.textContent = (searchHitIndex + 1) + ' / ' + searchHits.length;
+                prev.disabled = false;
+                next.disabled = false;
+            } else {
+                nav.classList.remove('visible');
+            }
         }
 
         function highlightLines(card, query) {
@@ -4578,9 +4688,11 @@ Suspicious Patterns:
             const query = this.value.trim().toLowerCase();
             const sections = document.querySelectorAll('.content-section');
             let totalMatches = 0;
-            let firstMatchEl = null;
 
             document.querySelectorAll('.card').forEach(c => clearLineHighlights(c));
+            searchHits = [];
+            searchHitIndex = 0;
+            document.getElementById('search-nav').classList.remove('visible');
 
             if (!query) {
                 sections.forEach(s => s.style.display = '');
@@ -4599,8 +4711,6 @@ Suspicious Patterns:
                         sectionHasMatch = true;
                         totalMatches++;
                         highlightLines(card, query);
-                        if (!firstMatchEl)
-                            firstMatchEl = card.querySelector('.line-highlight') || card;
                     } else {
                         card.style.display = 'none';
                     }
@@ -4612,8 +4722,16 @@ Suspicious Patterns:
             document.getElementById('search-count').textContent =
                 totalMatches > 0 ? totalMatches + ' card(s) found' : 'No results found';
 
-            if (firstMatchEl)
-                setTimeout(() => firstMatchEl.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
+            // Collect all highlighted lines after DOM settles, then jump to first
+            setTimeout(() => {
+                searchHits = Array.from(document.querySelectorAll('.line-highlight'));
+                searchHitIndex = 0;
+                if (searchHits.length) {
+                    searchHits[0].classList.add('line-highlight-active');
+                    searchHits[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    updateNavUI();
+                }
+            }, 50);
         });
 
         /* ===== THEME ===== */
@@ -4866,6 +4984,13 @@ Suspicious Patterns:
         });
 
     </script>
+
+    <div class="search-nav" id="search-nav">
+        <span class="search-nav-title">Results</span>
+        <button class="search-nav-btn" id="search-prev" onclick="navigateHit(-1)" title="Previous result">&#8593; Prev</button>
+        <span class="search-nav-label" id="search-nav-label">1 / 1</span>
+        <button class="search-nav-btn" id="search-next" onclick="navigateHit(1)" title="Next result">Next &#8595;</button>
+    </div>
 </body>
 
 </html>
