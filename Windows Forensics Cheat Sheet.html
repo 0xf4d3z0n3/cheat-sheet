@@ -245,6 +245,32 @@
             font-family: 'Fira Code', monospace
         }
 
+        .line-highlight {
+            background: rgba(255, 221, 0, 0.18) !important;
+            border-left: 3px solid rgba(255, 221, 0, 0.75) !important;
+            padding-left: 8px !important;
+            border-radius: 0 4px 4px 0
+        }
+
+        pre .line-highlight {
+            display: block;
+            background: rgba(255, 221, 0, 0.15);
+            border-left: 3px solid rgba(255, 221, 0, 0.75);
+            padding-left: 5px;
+            margin-left: -5px;
+            border-radius: 0 3px 3px 0
+        }
+
+        .light-mode .line-highlight {
+            background: rgba(230, 160, 0, 0.22) !important;
+            border-left-color: rgba(200, 130, 0, 0.85) !important
+        }
+
+        .light-mode pre .line-highlight {
+            background: rgba(230, 160, 0, 0.18);
+            border-left-color: rgba(200, 130, 0, 0.85)
+        }
+
         .toolbar {
             display: flex;
             justify-content: center;
@@ -4516,10 +4542,45 @@ Suspicious Patterns:
         }
 
         /* ===== SEARCH ===== */
+        function clearLineHighlights(card) {
+            card.querySelectorAll('.line-highlight').forEach(el => el.classList.remove('line-highlight'));
+            card.querySelectorAll('pre code[data-original]').forEach(el => {
+                el.innerHTML = el.getAttribute('data-original');
+                el.removeAttribute('data-original');
+            });
+        }
+
+        function highlightLines(card, query) {
+            const lowerQuery = query.toLowerCase();
+
+            // Highlight matching block-level elements (table rows, list items, paragraphs)
+            card.querySelectorAll('tr, li, p, dt, dd').forEach(el => {
+                if (el.textContent.toLowerCase().includes(lowerQuery))
+                    el.classList.add('line-highlight');
+            });
+
+            // Highlight matching lines inside <pre><code> blocks
+            card.querySelectorAll('pre code').forEach(codeEl => {
+                if (!codeEl.hasAttribute('data-original'))
+                    codeEl.setAttribute('data-original', codeEl.innerHTML);
+                const lines = codeEl.innerHTML.split('\n');
+                codeEl.innerHTML = lines.map(line => {
+                    const tmp = document.createElement('div');
+                    tmp.innerHTML = line;
+                    return tmp.textContent.toLowerCase().includes(lowerQuery)
+                        ? `<span class="line-highlight">${line}</span>`
+                        : line;
+                }).join('\n');
+            });
+        }
+
         document.getElementById('search-box').addEventListener('input', function () {
             const query = this.value.trim().toLowerCase();
             const sections = document.querySelectorAll('.content-section');
             let totalMatches = 0;
+            let firstMatchEl = null;
+
+            document.querySelectorAll('.card').forEach(c => clearLineHighlights(c));
 
             if (!query) {
                 sections.forEach(s => s.style.display = '');
@@ -4537,6 +4598,9 @@ Suspicious Patterns:
                         card.style.display = '';
                         sectionHasMatch = true;
                         totalMatches++;
+                        highlightLines(card, query);
+                        if (!firstMatchEl)
+                            firstMatchEl = card.querySelector('.line-highlight') || card;
                     } else {
                         card.style.display = 'none';
                     }
@@ -4547,6 +4611,9 @@ Suspicious Patterns:
 
             document.getElementById('search-count').textContent =
                 totalMatches > 0 ? totalMatches + ' card(s) found' : 'No results found';
+
+            if (firstMatchEl)
+                setTimeout(() => firstMatchEl.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
         });
 
         /* ===== THEME ===== */
