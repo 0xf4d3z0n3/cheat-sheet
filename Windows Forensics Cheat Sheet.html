@@ -3118,6 +3118,18 @@ Bits:
                     <td>Kerberos Service Ticket</td>
                     <td><code>TargetUserName</code>, <code>ServiceName</code></td>
                 </tr>
+                <tr>
+                    <td>4771</td>
+                    <td>Security</td>
+                    <td>Kerberos Pre-Authentication Failed</td>
+                    <td><code>TargetUserName</code>, <code>IpAddress</code>, <code>Status</code></td>
+                </tr>
+                <tr>
+                    <td>4722</td>
+                    <td>Security</td>
+                    <td>User Account Enabled</td>
+                    <td><code>TargetUserName</code>, <code>SubjectUserName</code></td>
+                </tr>
             </tbody>
         </table>
         <h3>Process Execution</h3>
@@ -3214,6 +3226,24 @@ Bits:
                     <td>RDP Auth Success</td>
                     <td><code>User</code>, <code>Source Network Address</code></td>
                 </tr>
+                <tr>
+                    <td>23</td>
+                    <td>TS-Local</td>
+                    <td>RDP Session Logoff</td>
+                    <td><code>User</code>, <code>SessionID</code></td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>TS-Local</td>
+                    <td>RDP Session Disconnected</td>
+                    <td><code>User</code>, <code>SessionID</code>, <code>Source Network Address</code></td>
+                </tr>
+                <tr>
+                    <td>1029</td>
+                    <td>TS-RDPClient</td>
+                    <td>Source RDP Connection (Username Hash)</td>
+                    <td><code>CalledStationID</code> (Base64 SHA256 of username)</td>
+                </tr>
             </tbody>
         </table>
         <h3>Persistence</h3>
@@ -3275,6 +3305,36 @@ Bits:
                     <td>Registry Value Set</td>
                     <td><code>TargetObject</code>, <code>Details</code></td>
                 </tr>
+                <tr>
+                    <td>100</td>
+                    <td>TaskScheduler</td>
+                    <td>Task Scheduler Started Task Instance</td>
+                    <td><code>TaskName</code>, <code>InstanceId</code></td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>TaskScheduler</td>
+                    <td>Task Scheduler Successfully Finished Task</td>
+                    <td><code>TaskName</code>, <code>InstanceId</code></td>
+                </tr>
+                <tr>
+                    <td>141</td>
+                    <td>TaskScheduler</td>
+                    <td>Task Scheduler Deleted Task</td>
+                    <td><code>TaskName</code>, <code>UserName</code></td>
+                </tr>
+                <tr>
+                    <td>7009</td>
+                    <td>System</td>
+                    <td>Service Connection Timeout</td>
+                    <td><code>ServiceName</code></td>
+                </tr>
+                <tr>
+                    <td>7034</td>
+                    <td>System</td>
+                    <td>Service Terminated Unexpectedly</td>
+                    <td><code>ServiceName</code>, <code>ServiceExitCode</code></td>
+                </tr>
             </tbody>
         </table>
         <h3>PowerShell Activity</h3>
@@ -3318,6 +3378,12 @@ Bits:
                     <td>Pipeline Execution</td>
                     <td>Details</td>
                 </tr>
+                <tr>
+                    <td>600</td>
+                    <td>Windows PowerShell</td>
+                    <td>Provider Started</td>
+                    <td><code>ProviderName</code>, <code>NewProviderState</code></td>
+                </tr>
             </tbody>
         </table>
         <h3>Anti-Forensics Detection</h3>
@@ -3348,6 +3414,143 @@ Bits:
                     <td>Security</td>
                     <td>Event Logging Shutdown</td>
                     <td>Logging stopped</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Reconnaissance &amp; Enumeration</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Key Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>4798</td>
+                    <td>Security</td>
+                    <td>User Local Group Membership Enumerated</td>
+                    <td><code>TargetUserName</code>, <code>SubjectUserName</code>, <code>CallerProcessName</code></td>
+                </tr>
+                <tr>
+                    <td>4799</td>
+                    <td>Security</td>
+                    <td>Security-Enabled Local Group Membership Enumerated</td>
+                    <td><code>TargetUserName</code>, <code>SubjectUserName</code>, <code>CallerProcessName</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Network Share Access</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Key Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5140</td>
+                    <td>Security</td>
+                    <td>Network Share Object Accessed</td>
+                    <td><code>ShareName</code>, <code>IpAddress</code>, <code>SubjectUserName</code></td>
+                </tr>
+                <tr>
+                    <td>5145</td>
+                    <td>Security</td>
+                    <td>Network Share Access Check</td>
+                    <td><code>ShareName</code>, <code>RelativeTargetName</code>, <code>AccessMask</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Windows Defender</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Key Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1116</td>
+                    <td>Windows Defender/Operational</td>
+                    <td>Malware Detected</td>
+                    <td><code>Threat Name</code>, <code>Detection User</code>, <code>Process Name</code>, <code>Path</code></td>
+                </tr>
+                <tr>
+                    <td>1117</td>
+                    <td>Windows Defender/Operational</td>
+                    <td>Malware Remediation Action Taken</td>
+                    <td><code>Threat Name</code>, <code>Action Name</code>, <code>Process Name</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Application Errors &amp; Crashes</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Key Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1000</td>
+                    <td>Application</td>
+                    <td>Application Error</td>
+                    <td><code>Application Name</code>, <code>Application Version</code>, <code>Fault Module</code></td>
+                </tr>
+                <tr>
+                    <td>1002</td>
+                    <td>Application</td>
+                    <td>Application Hang</td>
+                    <td><code>Application Name</code>, <code>Application Version</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Database Activity (ESENT)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Log</th>
+                    <th>Meaning</th>
+                    <th>Key Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>216</td>
+                    <td>Application (ESENT)</td>
+                    <td>Database Location Change Detected</td>
+                    <td><code>Database</code>, <code>Old Location</code>, <code>New Location</code></td>
+                </tr>
+                <tr>
+                    <td>325</td>
+                    <td>Application (ESENT)</td>
+                    <td>Database Engine Created New Database</td>
+                    <td><code>Database</code></td>
+                </tr>
+                <tr>
+                    <td>326</td>
+                    <td>Application (ESENT)</td>
+                    <td>Database Engine Attached Database</td>
+                    <td><code>Database</code></td>
+                </tr>
+                <tr>
+                    <td>327</td>
+                    <td>Application (ESENT)</td>
+                    <td>Database Engine Detached Database</td>
+                    <td><code>Database</code></td>
                 </tr>
             </tbody>
         </table>
